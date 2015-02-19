@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A2204C7A-CD5F-641A-ACE3-F478E5C0FA7B}</ProjectGuid>
+	<ProjectGuid>{E5E500C5-FCBA-7C4B-9B98-FACBDB4C8022}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -48,15 +48,16 @@
   <ItemGroup>
      <Compile Include="Assets\ClickToMove.cs" />
      <Compile Include="Assets\ClickToMoveCamera.cs" />
+     <Compile Include="Assets\EnemyHealth.cs" />
      <Compile Include="Assets\Fighter.cs" />
      <Compile Include="Assets\Mob.cs" />
      <None Include="Assets\SkeletonData\animations.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8E550345-D9AB-B6AD-8E03-BBA188351C42}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{E1A9C514-4B3C-67B5-D344-2F3096BB37A2}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{61154B7E-17E2-6162-BF84-50459A91C065}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{4B861C0C-0629-BD30-CD38-3014F09C434B}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
