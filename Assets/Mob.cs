@@ -4,6 +4,7 @@ using System.Collections;
 public class Mob : MonoBehaviour {
 	public float speed;
 	public float range;
+
 	//public bool inRange;
 	public CharacterController controller;
 	public Transform player;
@@ -20,10 +21,11 @@ public class Mob : MonoBehaviour {
 	private bool impacted;
 	public int health;
 	public int damage;
+	public int maxHealth;
 
 	// Use this for initialization
 	void Start () {
-		//health = 100;
+		health = maxHealth;
 		opponent = player.GetComponent<Fighter> ();
 	}
 	

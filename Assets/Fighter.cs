@@ -18,6 +18,8 @@ public class Fighter : MonoBehaviour {
 	private bool started;
 	private bool ended;
 
+	public float escapeTime;
+
 	void Start () {
 	
 	}

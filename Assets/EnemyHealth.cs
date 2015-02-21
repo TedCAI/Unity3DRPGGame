@@ -13,19 +13,32 @@ public class EnemyHealth : MonoBehaviour {
 
 	public Texture2D healthBar;
 	public Rect healthBarPosition;
+
+	public Fighter player;
+
+	public Mob target;
+	public float healthPercentage;
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (player.opponent != null) {
+						target = player.opponent.GetComponent<Mob> ();
+						healthPercentage = (float)target.health / (float)target.maxHealth;
+				} else {
+						target = null;
+						healthPercentage = 0;
+				}
 	}
 
 	void OnGUI(){
-		drawFrame ();
-		drawBar ();
+		if (target != null) {
+						drawFrame ();
+						drawBar ();
+				}
 	}
 
 	void drawFrame(){
@@ -40,7 +53,7 @@ public class EnemyHealth : MonoBehaviour {
 	void drawBar(){
 		healthBarPosition.x = framePosition.x + framePosition.width * horizontalDistance;
 		healthBarPosition.y = framePosition.y + framePosition.height * verticalDistance;
-		healthBarPosition.width = framePosition.width * horizontalZoom;
+		healthBarPosition.width = framePosition.width * horizontalZoom * healthPercentage;
 		healthBarPosition.height = framePosition.height * verticalZoom;
 		GUI.DrawTexture (healthBarPosition, healthBar);
 		}
