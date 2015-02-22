@@ -13,20 +13,23 @@ public class Fighter : MonoBehaviour {
 	public double impactTime;
 
 	public bool impacted;
+	public double impactLength;
 	public double range;
 
 	private bool started;
 	private bool ended;
 
-	public float escapeTime;
+	public float combatEscapeTime;
+	public float countDown;
 
 	void Start () {
-	
+		impactLength = (animation [attack.name].length * impactTime);
+		InvokeRepeating ("repeat",0,1);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(health);
+		//Debug.Log(health);
 		if (!isDead ()) {
 						if (Input.GetKey (KeyCode.Space) && inRange ()) {
 								animation.Play (attack.name);
@@ -89,11 +92,21 @@ public class Fighter : MonoBehaviour {
 	{
 		if (opponent != null && animation.IsPlaying (attack.name) && !impacted) {
 			if ((animation [attack.name].time > animation [attack.name].length * impactTime) && (animation [attack.name].time < animation [attack.name].length * 0.9)) {
+								countDown=combatEscapeTime;
+								CancelInvoke ("combatEscapeCountDown");
+								InvokeRepeating("combatEscapeCountDown",1,1);
 								opponent.GetComponent<Mob> ().getHit (damage);
 								impacted = true;
 						}
 				}
 	}
+
+	void combatEscapeCountDown(){
+				countDown -= 1;
+				if (countDown == 0) {
+						CancelInvoke ("combatEscapeCountDown");
+				}
+		}
 
 	bool inRange(){
 		if (Vector3.Distance (opponent.transform.position, transform.position) <= range) {

@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	public Mob target;
 	public float healthPercentage;
+
+	public bool started = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log (started);
 		if (player.opponent != null) {
 						target = player.opponent.GetComponent<Mob> ();
 						healthPercentage = (float)target.health / (float)target.maxHealth;
@@ -35,12 +38,20 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if (target != null) {
+		if (target != null && (!started || player.countDown > 0)) {
 						drawFrame ();
 						drawBar ();
 				}
+		if(player.countDown > 0){
+			started = true;
+		}else{
+			//if(started){
+			//	target = null;
+			//}
+			//started = false;
+		}
 	}
-
+	
 	void drawFrame(){
 		framePosition.x = (Screen.width - framePosition.width) / 2;
 		float width = 0.20f;
