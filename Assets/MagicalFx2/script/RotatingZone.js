@@ -1,5 +1,5 @@
 #pragma strict
-var rotationSpeed : float = 1;
+var rotationSpeed : float = 2;
 
 
 function Update () {
