@@ -9,6 +9,7 @@ public class Fighter : MonoBehaviour {
 
 	public int damage;
 	public int health;
+	public int maxHealth;
 
 	public double impactTime;
 
@@ -23,6 +24,7 @@ public class Fighter : MonoBehaviour {
 	public float countDown;
 
 	void Start () {
+		health = maxHealth;
 		impactLength = (animation [attack.name].length * impactTime);
 		InvokeRepeating ("repeat",0,1);
 	}
