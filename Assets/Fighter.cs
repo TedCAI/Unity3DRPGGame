@@ -23,6 +23,8 @@ public class Fighter : MonoBehaviour {
 	public float combatEscapeTime;
 	public float countDown;
 
+	public bool specialAttack;
+
 	void Start () {
 		health = maxHealth;
 		impactLength = (animation [attack.name].length * impactTime);
@@ -31,29 +33,44 @@ public class Fighter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log(health);
-		if (!isDead ()) {
-						if (Input.GetKey (KeyCode.Space) && inRange ()) {
-								animation.Play (attack.name);
-								ClickToMove.attack = true;
+		if (!isDead()) {
+			if (!specialAttack) {
+				attackFunction (0, 1f, KeyCode.Space);
+			}
+		} else {
+			dieMethod ();
+		}
+	}
 
-								if (opponent != null) {
-										transform.LookAt (opponent.transform.position);
-										//opponent.GetComponent<Mob>().getHit(damage);
-								}
-						}
+	void stunMob(){
 
-						if (animation [attack.name].time >= animation [attack.name].length * 0.9) {
-								ClickToMove.attack = false;
-								impacted = false; 
-						}
-						impact ();
-				} else {
-					//if(animation[die.name].time < animation[die.name].length * 0.9){
-						
-						dieMethod ();
-					//}
-				}
+	}
+
+	public void attackFunction(int stunSeconds, double scaledDamage, KeyCode key){
+		if (Input.GetKey (key) && inRange ()) {
+			animation.Play (attack.name);
+			ClickToMove.attack = true;
+			
+			if (opponent != null) {
+				transform.LookAt (opponent.transform.position);
+				//opponent.GetComponent<Mob>().getHit(damage);
+			}
+		}
+		
+		if (animation [attack.name].time >= animation [attack.name].length * 0.9) {
+			ClickToMove.attack = false;
+			impacted = false; 
+			if(specialAttack){
+				specialAttack = false;
+			}
+		}
+		impact (stunSeconds, scaledDamage);
+	}
+
+	public void resetAttackFunction(){
+		ClickToMove.attack = false;
+		impacted = false;
+		animation.Stop (attack.name);
 	}
 
 	public void getHit(int damage){
@@ -90,14 +107,15 @@ public class Fighter : MonoBehaviour {
 		}
 	}
 
-	void impact()
+	void impact(int stunSeconds, double scaledDamage)
 	{
 		if (opponent != null && animation.IsPlaying (attack.name) && !impacted) {
 			if ((animation [attack.name].time > animation [attack.name].length * impactTime) && (animation [attack.name].time < animation [attack.name].length * 0.9)) {
 								countDown=combatEscapeTime;
 								CancelInvoke ("combatEscapeCountDown");
 								InvokeRepeating("combatEscapeCountDown",1,1);
-								opponent.GetComponent<Mob> ().getHit (damage);
+								opponent.GetComponent<Mob> ().getHit ((int)(damage*scaledDamage));
+								opponent.GetComponent<Mob>().getStun(stunSeconds);
 								impacted = true;
 						}
 				}

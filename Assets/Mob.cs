@@ -24,6 +24,8 @@ public class Mob : MonoBehaviour {
 	public int damage;
 	public int maxHealth;
 
+	public int stunTime;
+
 	// Use this for initialization
 	void Start () {
 		health = maxHealth;
@@ -34,22 +36,25 @@ public class Mob : MonoBehaviour {
 	void Update () {
 		//Debug.Log (health);
 		if (!isDead ()) {
-						if (!inRange ()) {
-								chase ();
-						} else {
-								//animation.CrossFade (idle.name);
-				animation.Play(attackClip.name);
-				attack();
-
-				if(animation[attackClip.name].time >= animation[attackClip.name].length * 0.9){
-					impacted = false;
-				}
-						}
+			if (stunTime <= 0) {
+				if (!inRange ()) {
+					chase ();
 				} else {
-						//animation.Play (die.name);
-					dieMethod();
-				}
+					//animation.CrossFade (idle.name);
+					animation.Play (attackClip.name);
+					attack ();
 
+					if (animation [attackClip.name].time >= animation [attackClip.name].length * 0.9) {
+						impacted = false;
+					}
+				}
+			} else{
+
+			}
+		}else {
+			//animation.Play (die.name);
+			dieMethod();
+		}
 	}
 
 	void attack(){
@@ -91,6 +96,13 @@ public class Mob : MonoBehaviour {
 		}
 	}
 
+	void stunCountDown(){
+		stunTime -= 1;
+		if (stunTime <= 0) {
+			CancelInvoke("stunCountDown");
+		}
+	}
+
 	void chase()
 	{
 		transform.LookAt (player.position);
@@ -104,5 +116,10 @@ public class Mob : MonoBehaviour {
 		//fighter = player.GetComponent<Fighter>();
 
 		player.GetComponent<Fighter>().opponent = gameObject;
+	}
+
+	public void getStun(int seconds){
+		stunTime = seconds;
+		InvokeRepeating ("stunCountDown", 0f, 1f);
 	}
 }
