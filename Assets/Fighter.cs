@@ -40,7 +40,7 @@ public class Fighter : MonoBehaviour {
 			}
 
 			if(inAction){
-				if(attackFunction (0, 1f, KeyCode.Space)){
+				if(attackFunction (0, 1f, KeyCode.Space, null)){
 					
 				}else{
 					inAction = false;
@@ -55,7 +55,7 @@ public class Fighter : MonoBehaviour {
 
 	}
 
-	public bool attackFunction(int stunSeconds, double scaledDamage, KeyCode key){
+	public bool attackFunction(int stunSeconds, double scaledDamage, KeyCode key, GameObject particleEffect){
 		if (Input.GetKey (key) && inRange ()) {
 			animation.Play (attack.name);
 			ClickToMove.attack = true;
@@ -74,7 +74,7 @@ public class Fighter : MonoBehaviour {
 			}
 			return false;
 		}
-		impact (stunSeconds, scaledDamage);
+		impact (stunSeconds, scaledDamage, particleEffect);
 		return true;
 	}
 
@@ -118,7 +118,7 @@ public class Fighter : MonoBehaviour {
 		}
 	}
 
-	void impact(int stunSeconds, double scaledDamage)
+	void impact(int stunSeconds, double scaledDamage, GameObject particleEffect)
 	{
 		if (opponent != null && animation.IsPlaying (attack.name) && !impacted) {
 			if ((animation [attack.name].time > animation [attack.name].length * impactTime) && (animation [attack.name].time < animation [attack.name].length * 0.9)) {
@@ -127,6 +127,10 @@ public class Fighter : MonoBehaviour {
 								InvokeRepeating("combatEscapeCountDown",1,1);
 								opponent.GetComponent<Mob> ().getHit ((int)(damage*scaledDamage));
 								opponent.GetComponent<Mob>().getStun(stunSeconds);
+								if(particleEffect != null){
+									Instantiate(particleEffect, new Vector3(opponent.transform.position.x, opponent.transform.position.y + 1.75f, opponent.transform.position.z), Quaternion.identity);
+									//particleEffect = null;
+								}
 								impacted = true;
 						}
 				}

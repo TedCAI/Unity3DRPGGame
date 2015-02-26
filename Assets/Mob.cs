@@ -119,6 +119,7 @@ public class Mob : MonoBehaviour {
 	}
 
 	public void getStun(int seconds){
+		CancelInvoke ("stunCountDown");
 		stunTime = seconds;
 		InvokeRepeating ("stunCountDown", 0f, 1f);
 	}

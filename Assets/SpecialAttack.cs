@@ -8,7 +8,7 @@ public class SpecialAttack : MonoBehaviour {
 	public KeyCode key;
 	public Fighter player;
 	public bool inAction;
-	
+	public GameObject particleEffect;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +22,7 @@ public class SpecialAttack : MonoBehaviour {
 			inAction=true;
 		}
 		if (inAction) {
-			if(player.attackFunction (stunTime, damagePercentage, key)){
+			if(player.attackFunction (stunTime, damagePercentage, key, particleEffect)){
 
 			}else{
 				inAction = false;
