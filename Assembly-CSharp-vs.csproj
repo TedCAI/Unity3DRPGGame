@@ -53,6 +53,7 @@
      <Compile Include="Assets\LevelSystem.cs" />
      <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Mob.cs" />
+     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
      <None Include="Assets\SkeletonData\animations.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">

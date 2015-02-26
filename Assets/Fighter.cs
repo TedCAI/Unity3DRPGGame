@@ -19,6 +19,7 @@ public class Fighter : MonoBehaviour {
 
 	private bool started;
 	private bool ended;
+	public bool inAction;
 
 	public float combatEscapeTime;
 	public float countDown;
@@ -34,8 +35,16 @@ public class Fighter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!isDead()) {
-			if (!specialAttack) {
-				attackFunction (0, 1f, KeyCode.Space);
+			if (Input.GetKeyDown (KeyCode.Space) && !specialAttack) {
+				inAction = true;
+			}
+
+			if(inAction){
+				if(attackFunction (0, 1f, KeyCode.Space)){
+					
+				}else{
+					inAction = false;
+				}
 			}
 		} else {
 			dieMethod ();
@@ -46,7 +55,7 @@ public class Fighter : MonoBehaviour {
 
 	}
 
-	public void attackFunction(int stunSeconds, double scaledDamage, KeyCode key){
+	public bool attackFunction(int stunSeconds, double scaledDamage, KeyCode key){
 		if (Input.GetKey (key) && inRange ()) {
 			animation.Play (attack.name);
 			ClickToMove.attack = true;
@@ -63,8 +72,10 @@ public class Fighter : MonoBehaviour {
 			if(specialAttack){
 				specialAttack = false;
 			}
+			return false;
 		}
 		impact (stunSeconds, scaledDamage);
+		return true;
 	}
 
 	public void resetAttackFunction(){
