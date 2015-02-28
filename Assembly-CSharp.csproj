@@ -55,6 +55,7 @@
      <Compile Include="Assets\Mob.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
+     <Compile Include="Assets\Strike.cs" />
      <None Include="Assets\SkeletonData\animations.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ public class ClickToMove : MonoBehaviour {
 	public static bool attack = false;
 	public static bool die = false;
 
+	public static Vector3 cursorPosition;
 	// Use this for initialization
 	void Start () {
 		position = transform.position;
@@ -19,7 +20,8 @@ public class ClickToMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (die);
+		//Debug.Log (die);
+		locateCursor ();
 		if (!attack && !die) {
 						if (Input.GetMouseButton (0)) {
 								locatePosition ();
@@ -38,7 +40,19 @@ public class ClickToMove : MonoBehaviour {
 
 		if(Physics.Raycast(ray, out hit, 1000)){
 			if(hit.collider.tag!="Player" && hit.collider.tag!="Enemy"){
-			position = hit.point;
+				position = hit.point;
+			}
+			//Debug.Log(position);
+		}
+	}
+
+	void locateCursor(){
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		
+		if(Physics.Raycast(ray, out hit, 1000)){
+			if(hit.collider.tag!="Player" && hit.collider.tag!="Enemy"){
+				cursorPosition = hit.point;
 			}
 			//Debug.Log(position);
 		}
