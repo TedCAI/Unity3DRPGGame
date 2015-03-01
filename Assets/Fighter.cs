@@ -147,12 +147,13 @@ public class Fighter : MonoBehaviour {
 								Quaternion rot = transform.rotation;
 								rot.x = 0f;
 								rot.z = 0f;
+								//rot.y = transform.rotation.y + 90f;
 								if(projectile>0 && !casting){
 									//project projectile
-									Instantiate(Resources.Load("Projectile"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot);
+									Instantiate(Resources.Load("New"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot);
 									casting = true;
 								}
-								if(particleEffect != null){
+								if(particleEffect != null && opponent != null){
 									Instantiate(particleEffect, new Vector3(opponent.transform.position.x, opponent.transform.position.y + 1.75f, opponent.transform.position.z), Quaternion.identity);
 									//particleEffect = null;
 								}
