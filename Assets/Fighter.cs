@@ -150,10 +150,19 @@ public class Fighter : MonoBehaviour {
 								//rot.y = transform.rotation.y + 90f;
 								if(projectile>0 && !casting){
 									//project projectile
-									Instantiate(Resources.Load("New"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot);
+									if(projectile == 1){
+										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot);
+									}if(projectile == 2){
+										Quaternion rot1 = rot;
+										Quaternion rot2 = rot;
+										rot1.y += 30;				
+										rot2.y -= 30;
+										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot1);
+										Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot2);
+									}
 									casting = true;
 								}
-								if(particleEffect != null && opponent != null){
+								if(particleEffect != null && opponent != null ){
 									Instantiate(particleEffect, new Vector3(opponent.transform.position.x, opponent.transform.position.y + 1.75f, opponent.transform.position.z), Quaternion.identity);
 									//particleEffect = null;
 								}
