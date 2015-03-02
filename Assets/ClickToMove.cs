@@ -72,7 +72,7 @@ public class ClickToMove : MonoBehaviour {
 			animation.CrossFade(run.name);
 
 		} else {
-			Debug.Log("Here");
+			//Debug.Log("Here");
 			animation.CrossFade(idle.name);		
 		}
 

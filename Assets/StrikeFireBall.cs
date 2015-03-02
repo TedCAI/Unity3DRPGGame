@@ -9,6 +9,7 @@ public class StrikeFireBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		timeKill = Time.time;
+		Debug.Log (transform.position);
 		transform.Rotate(new Vector3(0f,270f,0f));
 	}
 	
@@ -19,7 +20,7 @@ public class StrikeFireBall : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log ("test");
+		//Debug.Log ("test");
 		if (other.tag == "Enemy") {
 			other.GetComponent<Mob>().getHit (damage);
 		}

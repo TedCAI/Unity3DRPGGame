@@ -153,12 +153,35 @@ public class Fighter : MonoBehaviour {
 									if(projectile == 1){
 										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot);
 									}if(projectile == 2){
-										Quaternion rot1 = rot;
-										Quaternion rot2 = rot;
-										rot1.y += 30;				
-										rot2.y -= 30;
+										Quaternion rot1 = transform.rotation;
+										Quaternion rot2 = transform.rotation;
+										rot1.x = 0f;
+										rot1.z = 0f;
+										rot2.x = 0f;
+										rot2.z = 0f;
+										//Debug.Log(rot1.y);
+										rot1.y = rot1.y + 0.1f;		
+										//Debug.Log(rot1.y);
+										rot2.y = rot2.y - 0.1f;
+										//Quaternion.RotateTowards(new Vector3(0f, 0f,0f));
 										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot1);
 										Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot2);
+									}if(projectile == 3){
+										int numOfBalls = 36;
+										float degree = 0f;
+										//Quaternion rot3 = rot;
+										//rot3.w = 0.0f;
+
+										//rot3.y = -1.0f;
+										for(int i = 0; i < numOfBalls; i++){
+											degree += 10f;
+											//rot3.w = 1.0f;
+											Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
+											//rot3.w = -1.0f;
+											//Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot3);
+
+							//Debug.Log(rot3);		
+										}
 									}
 									casting = true;
 								}

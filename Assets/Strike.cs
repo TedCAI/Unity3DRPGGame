@@ -8,7 +8,7 @@ public class Strike : MonoBehaviour {
 	//public GameObject opponent;
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("s");
+		//Debug.Log ("s");
 		//transform.eulerAngles = opponent.GetComponent<Fighter> ().transform.position;
 	}
 	
@@ -18,7 +18,7 @@ public class Strike : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log ("hit s");
+		//Debug.Log ("hit s");
 		if (other.tag == "Enemy") {
 			other.GetComponent<Mob>().getHit (damage);
 		}
