@@ -1,0 +1,156 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-4576
+Cmd: getPlatforms
+Cmd: preprocess
+  insize=443 outsize=1193 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4279 outsize=2607 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4279 outsize=1242 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2255 outsize=2875 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2255 outsize=1542 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1783 outsize=1477 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1783 outsize=632 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=3996 outsize=2883 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=3996 outsize=1152 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: preprocess
+  insize=2437 outsize=1577 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6629 outsize=4232 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6629 outsize=3606 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4224 outsize=3882 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4224 outsize=3898 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4141 outsize=3167 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4141 outsize=2582 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6067 outsize=3135 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6067 outsize=2330 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: preprocess
+  insize=3172 outsize=1385 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=7265 outsize=4232 kw=DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=7265 outsize=3549 kw=DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4842 outsize=3882 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4842 outsize=3874 kw=POINT ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4842 outsize=3102 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4842 outsize=3403 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4224 outsize=3102 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4224 outsize=3427 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2255 outsize=1851 kw=DIRECTIONAL ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2255 outsize=1128 kw=DIRECTIONAL ok=1
+Cmd: preprocess
+  insize=1037 outsize=498 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=841 outsize=1128 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=841 outsize=778 kw= ok=1
+Cmd: preprocess
+  insize=1991 outsize=698 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1595 outsize=1193 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1595 outsize=1298 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
+  insize=834 outsize=330 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=805 outsize=990 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=805 outsize=917 kw= ok=1
+Cmd: preprocess
+  insize=1787 outsize=743 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1346 outsize=1664 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1346 outsize=1242 kw= ok=1
+Cmd: preprocess
+  insize=2408 outsize=1173 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1537 outsize=1274 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1537 outsize=908 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
+  insize=1588 outsize=863 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1027 outsize=1274 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1027 outsize=908 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
+  insize=1081 outsize=334 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1049 outsize=990 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1049 outsize=1404 kw= ok=1
+Cmd: preprocess
+  insize=2407 outsize=1175 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1534 outsize=1274 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1534 outsize=908 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
+  insize=2707 outsize=525 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2402 outsize=1989 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2402 outsize=3468 kw= ok=1
+Cmd: preprocess
+  insize=1245 outsize=262 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (51): syntax error: unexpected token '['
+  api=4 type=0 insize=1285 outsize=0 kw= ok=0
+Cmd: preprocess
+  insize=2182 outsize=881 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1603 outsize=1461 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1603 outsize=1632 kw= ok=1
+Cmd: preprocess
+  insize=1171 outsize=402 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1071 outsize=1071 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1071 outsize=803 kw= ok=1
+Cmd: preprocess
+  insize=2164 outsize=1159 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1310 outsize=2103 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1310 outsize=1583 kw= ok=1
+Cmd: preprocess
+  insize=882 outsize=271 ok=1
+Cmd: compileSnippet
+  error: 1 plat 4 at (41): implicit truncation of vector type
+  error: 2 plat 4 at (42): incorrect number of arguments to numeric-type constructor
+  api=4 type=0 insize=912 outsize=0 kw= ok=0
+Cmd: preprocess
+  insize=1905 outsize=908 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1298 outsize=1274 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1298 outsize=1428 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
+  insize=1110 outsize=323 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1088 outsize=990 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1088 outsize=1282 kw= ok=1

@@ -54,7 +54,30 @@
      <Compile Include="Assets\MagicalFx2\script\RotatingZone.js" />
      <Compile Include="Assets\MagicalFx2\script\Script_missile.js" />
      <Compile Include="Assets\MagicalFx2\script\script_missile_Launcher.js" />
+     <Compile Include="Assets\WaterFlow1\CamSwitch.js" />
+     <Compile Include="Assets\WaterFlow1\FlickerLight.js" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\XftFpsDisplay.js" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_distort_additive.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_color_inverse.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xf_heat_distortion.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_glitch.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_glow_downsample.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_replacement.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur_new.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur.shader" />
+     <None Include="Assets\Xffect\readme.txt" />
+     <None Include="Assets\WaterFlow1\shaders\waterflow2.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_glow_conetap.shader" />
+     <None Include="Assets\WaterFlow1\shaders\skysphere.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_volume_fog.shader" />
      <None Include="Assets\SkeletonData\animations.txt" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_mask.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_perobj_additive.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_blend.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_glow_compose.shader" />
+     <None Include="Assets\WaterFlow1\shaders\waterduct1.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_perobj_alpha_blend.shader" />
+     <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur_mask.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>D:/Github/Unity3DRPGGame/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
