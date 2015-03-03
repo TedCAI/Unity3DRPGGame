@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SpecialAttack : MonoBehaviour {
@@ -12,6 +12,9 @@ public class SpecialAttack : MonoBehaviour {
 	public int projectile;
 
 	public bool opponentBased;
+
+	//public DOTSkill dotSkill;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,6 +27,11 @@ public class SpecialAttack : MonoBehaviour {
 			player.specialAttack=true;
 			inAction=true;
 		}
+
+		//if(dotSkill != null){
+		//	dotSkill.GetComponent<DOTSkill>().damage = (int)(damagePercentage*100);
+		//}
+
 		if (inAction) {
 			if(player.attackFunction (stunTime, damagePercentage, key, particleEffect, projectile, opponentBased)){
 

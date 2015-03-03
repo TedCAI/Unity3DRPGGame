@@ -10,6 +10,7 @@ public class Mob : MonoBehaviour {
 	public Transform player;
 	private Fighter opponent;
 	public LevelSystem playerLevel;
+	public OnFire debuffEffect;
 
 	public AnimationClip attackClip;
 	public AnimationClip run;
@@ -25,6 +26,10 @@ public class Mob : MonoBehaviour {
 	public int maxHealth;
 
 	public int stunTime;
+	public int dotDamage;
+	public int effectTime;
+
+	public bool onFire;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +41,9 @@ public class Mob : MonoBehaviour {
 	void Update () {
 		//Debug.Log (health);
 		if (!isDead ()) {
+			//if(onFire){
+				//Instantiate(Resources.Load("OnFireDebuff"), new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
+			//}
 			if (stunTime <= 0) {
 				if (!inRange ()) {
 					chase ();
@@ -75,8 +83,34 @@ public class Mob : MonoBehaviour {
 	public void getHit(int damage){
 		health -= damage;
 		if (health < 0) {
-						health = 0;
-				}
+			health = 0;
+		}
+	}
+
+	public void getHitDOT(int damage, int effectTime){
+		dotDamage = damage;
+		this.effectTime = effectTime;
+		debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (true);
+		CancelInvoke ("dOTCountDown");
+		InvokeRepeating ("dOTCountDown", 1f, 1f);
+		onFire = true;
+		//debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (true);
+		//Instantiate(Resources.Load("OnFireDebuff"), new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
+	}
+
+	public void dOTCountDown(){
+		//debuffEffect.GetComponent<OnFire> ().countDown = effectTime;
+		//debuffEffect.GetComponent<OnFire> ().isActive = true;
+		if (effectTime <= 0) {
+			CancelInvoke ("dOTCountDown");
+			onFire=false;
+			debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (false);
+		}
+		//InvokeRepeating ("dOTCountDown", 0f, 1f);
+
+		this.effectTime -= 1;
+		getHit (dotDamage);
+		//Debug.Log ("debuff");
 	}
 
 	void dieMethod(){

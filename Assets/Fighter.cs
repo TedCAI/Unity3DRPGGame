@@ -176,7 +176,7 @@ public class Fighter : MonoBehaviour {
 										for(int i = 0; i < numOfBalls; i++){
 											degree += 10f;
 											//rot3.w = 1.0f;
-											Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
+											Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
 											//rot3.w = -1.0f;
 											//Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot3);
 

@@ -9,7 +9,7 @@ public class StrikeFireBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		timeKill = Time.time;
-		Debug.Log (transform.position);
+		//Debug.Log (transform.position);
 		transform.Rotate(new Vector3(0f,270f,0f));
 	}
 	
