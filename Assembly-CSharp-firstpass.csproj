@@ -47,27 +47,39 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Alpha Blended.shader" />
+     <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Cutout.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_distort_additive.shader" />
+     <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Additive Tint.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_color_inverse.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xf_heat_distortion.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_glitch.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_glow_downsample.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_replacement.shader" />
+     <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Additive.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur_new.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur.shader" />
      <None Include="Assets\Xffect\readme.txt" />
      <None Include="Assets\WaterFlow1\shaders\waterflow2.shader" />
+     <None Include="Assets\IGSoft_Tools\Readme\Contact.txt" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_glow_conetap.shader" />
+     <None Include="Assets\IGSoft_Tools\Readme\Fx Maker Version.txt" />
+     <None Include="Assets\IGSoft_Tools\Readme\FX Maker VideoGuide Youtube.txt" />
+     <None Include="Assets\IGSoft_Tools\FXMaker\ToolScript\Temp\grayShader.shader" />
+     <None Include="Assets\IGSoft_Tools\FXMaker\ToolResource\UnityShader\FXMakerGrayscaleEffect.shader" />
      <None Include="Assets\WaterFlow1\shaders\skysphere.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_volume_fog.shader" />
      <None Include="Assets\SkeletonData\animations.txt" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_mask.shader" />
+     <None Include="Assets\IGSoft_Tools\FXMaker\ToolResource\EditorShader\LineColoredBlended.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_perobj_additive.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_blend.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_glow_compose.shader" />
      <None Include="Assets\WaterFlow1\shaders\waterduct1.shader" />
+     <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Alpha Blended Tint.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\GlowPerObj\xft_glow_perobj_alpha_blend.shader" />
      <None Include="Assets\Xffect\Resources\Shaders\xft_radial_blur_mask.shader" />
+     <None Include="Assets\IGSoft_Tools\FXMaker\ToolResource\EditorShader\LineBackground.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
