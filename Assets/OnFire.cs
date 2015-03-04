@@ -7,7 +7,7 @@ public class OnFire : MonoBehaviour {
 	//public int countDown;
 	// Use this for initialization
 	void Start () {
-		gameObject.SetActive(false);
+		//gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame

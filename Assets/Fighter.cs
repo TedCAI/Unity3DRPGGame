@@ -31,6 +31,7 @@ public class Fighter : MonoBehaviour {
 		health = maxHealth;
 		impactLength = (animation [attack.name].length * impactTime);
 		InvokeRepeating ("repeat",0,1);
+
 	}
 	
 	// Update is called once per frame
@@ -169,23 +170,18 @@ public class Fighter : MonoBehaviour {
 									}if(projectile == 3){
 										int numOfBalls = 36;
 										float degree = 0f;
-										//Quaternion rot3 = rot;
-										//rot3.w = 0.0f;
-
-										//rot3.y = -1.0f;
+										
 										for(int i = 0; i < numOfBalls; i++){
 											degree += 10f;
-											//rot3.w = 1.0f;
 											Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
-											//rot3.w = -1.0f;
-											//Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot3);
-
-							//Debug.Log(rot3);		
+													
 										}
+									}if(projectile == 4){
+										Instantiate(Resources.Load("FireWall"), new Vector3(ClickToMove.cursorPosition.x, 0f, ClickToMove.cursorPosition.z), Quaternion.identity);
 									}
 									casting = true;
 								}
-								if(particleEffect != null && opponent != null ){
+								if(particleEffect != null && opponent != null && opponentBased){
 									Instantiate(particleEffect, new Vector3(opponent.transform.position.x, opponent.transform.position.y + 1.75f, opponent.transform.position.z), Quaternion.identity);
 									//particleEffect = null;
 								}

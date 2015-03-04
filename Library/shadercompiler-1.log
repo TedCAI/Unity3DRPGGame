@@ -1,3 +1,66 @@
-Base path: C:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-1-5568
+Base path: F:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-9940
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=1095 outsize=526 ok=1
+Cmd: preprocess
+  insize=2062 outsize=723 ok=1
+Cmd: preprocess
+  insize=643 outsize=643 ok=1
+Cmd: preprocess
+  insize=889 outsize=352 ok=1
+Cmd: preprocess
+  insize=196 outsize=196 ok=1
+Cmd: preprocess
+  insize=774 outsize=351 ok=1
+Cmd: preprocess
+  insize=1862 outsize=774 ok=1
+Cmd: preprocess
+  insize=2515 outsize=1225 ok=1
+Cmd: preprocess
+  insize=976 outsize=976 ok=1
+Cmd: preprocess
+  insize=1674 outsize=909 ok=1
+Cmd: preprocess
+  insize=1131 outsize=1131 ok=1
+Cmd: preprocess
+  insize=1145 outsize=355 ok=1
+Cmd: preprocess
+  insize=2515 outsize=1228 ok=1
+Cmd: preprocess
+  insize=470 outsize=1205 ok=1
+Cmd: preprocess
+  insize=243 outsize=243 ok=1
+Cmd: preprocess
+  insize=2707 outsize=525 ok=1
+Cmd: preprocess
+  insize=2521 outsize=1601 ok=1
+Cmd: preprocess
+  insize=1313 outsize=280 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (51): syntax error: unexpected token '['
+  api=4 type=0 insize=1285 outsize=0 kw= ok=0
+Cmd: preprocess
+  insize=2285 outsize=922 ok=1
+Cmd: preprocess
+  insize=965 outsize=1120 ok=1
+Cmd: preprocess
+  insize=1235 outsize=423 ok=1
+Cmd: preprocess
+  insize=659 outsize=659 ok=1
+Cmd: preprocess
+  insize=460 outsize=460 ok=1
+Cmd: preprocess
+  insize=3279 outsize=1413 ok=1
+Cmd: preprocess
+  insize=2260 outsize=1203 ok=1
+Cmd: preprocess
+  insize=942 outsize=291 ok=1
+Cmd: compileSnippet
+  error: 1 plat 4 at (41): implicit truncation of vector type
+  error: 2 plat 4 at (42): incorrect number of arguments to numeric-type constructor
+  api=4 type=0 insize=912 outsize=0 kw= ok=0
+Cmd: preprocess
+  insize=1988 outsize=946 ok=1
+Cmd: preprocess
+  insize=1175 outsize=345 ok=1
