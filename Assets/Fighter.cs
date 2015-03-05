@@ -167,14 +167,16 @@ public class Fighter : MonoBehaviour {
 										//Quaternion.RotateTowards(new Vector3(0f, 0f,0f));
 										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot1);
 										Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot2);
-									}if(projectile == 3){
+									}if(projectile == 3 || projectile == 5){
 										int numOfBalls = 36;
 										float degree = 0f;
 										
 										for(int i = 0; i < numOfBalls; i++){
 											degree += 10f;
-											Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
-													
+											if(projectile == 3)
+												Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
+											else if(projectile == 5)
+												Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
 										}
 									}if(projectile == 4){
 										Instantiate(Resources.Load("FireWall"), new Vector3(ClickToMove.cursorPosition.x, 0f, ClickToMove.cursorPosition.z), Quaternion.identity);

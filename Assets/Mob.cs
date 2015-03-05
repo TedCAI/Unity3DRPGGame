@@ -33,8 +33,10 @@ public class Mob : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find ("Player").GetComponent<Transform> ();
 		health = maxHealth;
 		opponent = player.GetComponent<Fighter> ();
+		playerLevel = GameObject.Find ("Player").GetComponent<LevelSystem> ();
 	}
 	
 	// Update is called once per frame
@@ -115,10 +117,11 @@ public class Mob : MonoBehaviour {
 
 	void dieMethod(){
 				GetComponent<Animation>().Play (die.name);
-
-				if (GetComponent<Animation>() [die.name].time > GetComponent<Animation>() [die.name].length * 0.9) {
+				//Debug.Log ("die");
+				//Debug.Log (this.gameObject);
+				if (GetComponent<Animation>() [die.name].time > GetComponent<Animation>() [die.name].length * 0.75) {
 						playerLevel.exp += 200;
-						Destroy (gameObject);
+						Destroy (this.gameObject);
 				}
 		}
 

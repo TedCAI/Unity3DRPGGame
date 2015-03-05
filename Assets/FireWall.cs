@@ -6,7 +6,7 @@ public class FireWall : MonoBehaviour {
 	public int effectTime;
 	public bool isInside;
 	public Collider mob;
-	public Collider player;
+	public CharacterController player;
 	public Collider selfCollider;
 	//public SpecialAttack spAttk;
 	// Use this for initialization

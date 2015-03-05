@@ -95,6 +95,7 @@
      <Compile Include="Assets\Mob.cs" />
      <Compile Include="Assets\OnFire.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SpamEnemy.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
      <Compile Include="Assets\Strike.cs" />
      <Compile Include="Assets\StrikeFireBall.cs" />

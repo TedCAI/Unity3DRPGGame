@@ -11,6 +11,7 @@ public class Thunder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		damage = (int)GameObject.Find ("CastThunder").GetComponent<CastThunder> ().thunderDamage ();
 		transform.Translate (Vector3.down*26f*Time.deltaTime);
 	}
 
