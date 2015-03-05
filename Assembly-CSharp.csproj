@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CastThunder.cs" />
      <Compile Include="Assets\ClickToMove.cs" />
      <Compile Include="Assets\ClickToMoveCamera.cs" />
      <Compile Include="Assets\DOTSkill.cs" />
+     <Compile Include="Assets\DestroyObject.cs" />
      <Compile Include="Assets\EnemyHealth.cs" />
      <Compile Include="Assets\FT_Slasher_volume01\SampleScene\Scripts\Button.cs" />
      <Compile Include="Assets\FT_Slasher_volume01\SampleScene\Scripts\EffectSelfDestruct.cs" />
@@ -153,6 +155,7 @@
      <Compile Include="Assets\SpecialAttack.cs" />
      <Compile Include="Assets\Strike.cs" />
      <Compile Include="Assets\StrikeFireBall.cs" />
+     <Compile Include="Assets\Thunder.cs" />
      <Compile Include="Assets\Xffect\Examples\Scripts\CompositeXffect.cs" />
      <Compile Include="Assets\Xffect\Examples\Scripts\ExampleCamera.cs" />
      <Compile Include="Assets\Xffect\Examples\Scripts\ExampleManager.cs" />
