@@ -69,11 +69,11 @@ public class ClickToMove : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, Time.deltaTime * 10);
 			controller.SimpleMove (transform.forward * speed);
 						//Debug.Log (transform.position);
-			animation.CrossFade(run.name);
+			GetComponent<Animation>().CrossFade(run.name);
 
 		} else {
 			//Debug.Log("Here");
-			animation.CrossFade(idle.name);		
+			GetComponent<Animation>().CrossFade(idle.name);		
 		}
 
 	}

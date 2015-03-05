@@ -49,10 +49,10 @@ public class Mob : MonoBehaviour {
 					chase ();
 				} else {
 					//animation.CrossFade (idle.name);
-					animation.Play (attackClip.name);
+					GetComponent<Animation>().Play (attackClip.name);
 					attack ();
 
-					if (animation [attackClip.name].time >= animation [attackClip.name].length * 0.9) {
+					if (GetComponent<Animation>() [attackClip.name].time >= GetComponent<Animation>() [attackClip.name].length * 0.9) {
 						impacted = false;
 					}
 				}
@@ -66,7 +66,7 @@ public class Mob : MonoBehaviour {
 	}
 
 	void attack(){
-		if (animation [attackClip.name].time > animation [attackClip.name].length * impactTime && !impacted && (animation[attackClip.name].time < animation[attackClip.name].length * 0.9)) {
+		if (GetComponent<Animation>() [attackClip.name].time > GetComponent<Animation>() [attackClip.name].length * impactTime && !impacted && (GetComponent<Animation>()[attackClip.name].time < GetComponent<Animation>()[attackClip.name].length * 0.9)) {
 						opponent.getHit(damage);
 						impacted=true;
 				}
@@ -114,9 +114,9 @@ public class Mob : MonoBehaviour {
 	}
 
 	void dieMethod(){
-				animation.Play (die.name);
+				GetComponent<Animation>().Play (die.name);
 
-				if (animation [die.name].time > animation [die.name].length * 0.9) {
+				if (GetComponent<Animation>() [die.name].time > GetComponent<Animation>() [die.name].length * 0.9) {
 						playerLevel.exp += 200;
 						Destroy (gameObject);
 				}
@@ -141,7 +141,7 @@ public class Mob : MonoBehaviour {
 	{
 		transform.LookAt (player.position);
 		controller.SimpleMove (transform.forward * speed);
-		animation.CrossFade (run.name);
+		GetComponent<Animation>().CrossFade (run.name);
 	}
 
 	void OnMouseOver(){

@@ -25,11 +25,11 @@ public class XftGlowPerObj : MonoBehaviour
 			if (m_shaderCamera == null)
 			{
 				m_shaderCamera = new GameObject("ShaderCamera", typeof(Camera));
-				m_shaderCamera.camera.enabled = false;
+				m_shaderCamera.GetComponent<Camera>().enabled = false;
 				m_shaderCamera.hideFlags = HideFlags.HideAndDontSave;
 			}
 			
-			return m_shaderCamera.camera;
+			return m_shaderCamera.GetComponent<Camera>();
 		}
 	}
 	
@@ -106,11 +106,11 @@ public class XftGlowPerObj : MonoBehaviour
 	void PrepareRenderTex()
 	{
 		if (TempRenderTex == null) {
-			TempRenderTex = RenderTexture.GetTemporary ((int)camera.pixelWidth, (int)camera.pixelHeight, 24);
+			TempRenderTex = RenderTexture.GetTemporary ((int)GetComponent<Camera>().pixelWidth, (int)GetComponent<Camera>().pixelHeight, 24);
 		}
 		
 		if (TempRenderGlow == null) {
-			TempRenderGlow = RenderTexture.GetTemporary ((int)camera.pixelWidth, (int)camera.pixelHeight, 24);
+			TempRenderGlow = RenderTexture.GetTemporary ((int)GetComponent<Camera>().pixelWidth, (int)GetComponent<Camera>().pixelHeight, 24);
 		}
 	}
 
@@ -122,7 +122,7 @@ public class XftGlowPerObj : MonoBehaviour
 		PrepareRenderTex();
 
 		Camera cam = ShaderCamera;
-		cam.CopyFrom (camera);
+		cam.CopyFrom (GetComponent<Camera>());
 		cam.backgroundColor = Color.black;
 
 		cam.targetTexture = TempRenderTex;

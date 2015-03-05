@@ -31,7 +31,7 @@ namespace Xft
 
             	if (m_Listener != null)
             	{
-                	AudioSource source = m_Listener.audio;
+                	AudioSource source = m_Listener.GetComponent<AudioSource>();
                 	if (source == null) source = m_Listener.gameObject.AddComponent<AudioSource>();
                 	source.pitch = pitch;
                 	source.PlayOneShot(clip, volume);

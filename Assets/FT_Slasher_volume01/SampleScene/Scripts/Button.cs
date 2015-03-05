@@ -12,9 +12,9 @@ public class Button : MonoBehaviour {
 	
 	 IEnumerator PlayEffect() {
        	//Play Attack animation
-		objectToAnimate.animation.Play("attack");
+		objectToAnimate.GetComponent<Animation>().Play("attack");
 		//Animation to play after attacking
-		objectToAnimate.animation.PlayQueued("idle");
+		objectToAnimate.GetComponent<Animation>().PlayQueued("idle");
 		
         yield return new WaitForSeconds(0.4f);
 		

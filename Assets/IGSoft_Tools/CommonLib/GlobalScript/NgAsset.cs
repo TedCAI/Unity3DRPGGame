@@ -684,8 +684,8 @@ public class NgAsset
 	// 현재 화면을 저장한다.
 	public static void ScreenshotCapture(string filename, float captureZoomRate)
 	{
-		m_fOldCameraSize = Camera.mainCamera.fieldOfView;
-		Camera.mainCamera.fieldOfView = m_fOldCameraSize / captureZoomRate;
+		m_fOldCameraSize = Camera.main.fieldOfView;
+		Camera.main.fieldOfView = m_fOldCameraSize / captureZoomRate;
 		Application.CaptureScreenshot(filename);
 	}
 
@@ -694,7 +694,7 @@ public class NgAsset
 	{
 //		AssetDatabase.ImportAsset("../" + filename);
 //		File.Copy("../" + filename, targetPath + filename);
-		Camera.mainCamera.fieldOfView = m_fOldCameraSize;
+		Camera.main.fieldOfView = m_fOldCameraSize;
  		FileUtil.CopyFileOrDirectory(filename, targetPath + filename);
 		FileUtil.DeleteFileOrDirectory(filename);
 		Debug.Log("ScreenshotSave -------------------------------");
@@ -724,15 +724,15 @@ public class NgAsset
 	public static void CaptureRectPreprocess(float captureZoomRate)
 	{
 		//	직접 세이브방식... 
-		if (Camera.mainCamera != null)
+		if (Camera.main != null)
 		{
-			if (Camera.mainCamera.orthographic)
+			if (Camera.main.orthographic)
 			{
-				m_fOldCameraSize = Camera.mainCamera.orthographicSize;
-				Camera.mainCamera.orthographicSize = m_fOldCameraSize / captureZoomRate;
+				m_fOldCameraSize = Camera.main.orthographicSize;
+				Camera.main.orthographicSize = m_fOldCameraSize / captureZoomRate;
 			} else {
-				m_fOldCameraSize = Camera.mainCamera.fieldOfView;
-				Camera.mainCamera.fieldOfView = m_fOldCameraSize / captureZoomRate;
+				m_fOldCameraSize = Camera.main.fieldOfView;
+				Camera.main.fieldOfView = m_fOldCameraSize / captureZoomRate;
 			}
 		}
 	}
@@ -768,9 +768,9 @@ public class NgAsset
 		AssetDatabase.Refresh();
 		Object.DestroyImmediate(tex);
 		CaptureResize(NgFile.CombinePath(targetPath, filename));
-		if (Camera.mainCamera.orthographic)
-			Camera.mainCamera.orthographicSize = m_fOldCameraSize;
-		else Camera.mainCamera.fieldOfView = m_fOldCameraSize;
+		if (Camera.main.orthographic)
+			Camera.main.orthographicSize = m_fOldCameraSize;
+		else Camera.main.fieldOfView = m_fOldCameraSize;
 #endif
 	}
 

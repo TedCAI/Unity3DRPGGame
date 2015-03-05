@@ -185,8 +185,8 @@ public class XffectComponent : MonoBehaviour
                 //obj.transform.parent = this.transform;
                 //tobeAdded.Add(obj);
                 MeshList.Add(obj);
-                obj.AddComponent("MeshFilter");
-                obj.AddComponent("MeshRenderer");
+                obj.AddComponent<MeshFilter>();
+                obj.AddComponent<MeshRenderer>();
                 SetActive(obj,IsActive(gameObject));
     
 #if UNITY_EDITOR
@@ -201,7 +201,7 @@ public class XffectComponent : MonoBehaviour
                 Meshrenderer = (MeshRenderer)obj.GetComponent(typeof(MeshRenderer));
                 Meshrenderer.castShadows = false;
                 Meshrenderer.receiveShadows = false;
-                Meshrenderer.renderer.sharedMaterial = mat;
+                Meshrenderer.GetComponent<Renderer>().sharedMaterial = mat;
                 Meshfilter.sharedMesh = new Mesh();
                 MatDic[mat.name] = new VertexPool(Meshfilter.sharedMesh, mat);
             }

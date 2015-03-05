@@ -289,7 +289,7 @@ public class FXMakerMain : MonoBehaviour
 		UnactiveOriginalObject();
 
 		// main Camera Check
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			FxmPopupManager.inst.ShowToolMessage("MainCamera not Found");
 
 		// ShotKey
@@ -610,29 +610,29 @@ public class FXMakerMain : MonoBehaviour
 		if (bGray)
 		{
 			int			grayLayer	= LayerMask.NameToLayer("TransparentFX");
-			if (Camera.mainCamera != null)
+			if (Camera.main != null)
 			{
-				Camera.mainCamera.clearFlags	= CameraClearFlags.Depth;
-				Camera.mainCamera.cullingMask	= (1<<grayLayer);
+				Camera.main.clearFlags	= CameraClearFlags.Depth;
+				Camera.main.cullingMask	= (1<<grayLayer);
 			}
 			if (GetGrayscaleCamera() != null)
 			{
-				if (Camera.mainCamera)
+				if (Camera.main)
 				{
-					m_GrayscaleCamera.backgroundColor	= Camera.mainCamera.backgroundColor;
-					m_GrayscaleCamera.fieldOfView		= Camera.mainCamera.fieldOfView;
-					m_GrayscaleCamera.nearClipPlane		= Camera.mainCamera.nearClipPlane;
-					m_GrayscaleCamera.farClipPlane		= Camera.mainCamera.farClipPlane;
-					m_GrayscaleCamera.orthographicSize	= Camera.mainCamera.orthographicSize;
-					m_GrayscaleCamera.orthographic		= Camera.mainCamera.orthographic;
+					m_GrayscaleCamera.backgroundColor	= Camera.main.backgroundColor;
+					m_GrayscaleCamera.fieldOfView		= Camera.main.fieldOfView;
+					m_GrayscaleCamera.nearClipPlane		= Camera.main.nearClipPlane;
+					m_GrayscaleCamera.farClipPlane		= Camera.main.farClipPlane;
+					m_GrayscaleCamera.orthographicSize	= Camera.main.orthographicSize;
+					m_GrayscaleCamera.orthographic		= Camera.main.orthographic;
 				}
 				m_GrayscaleCamera.enabled = true;
 			}
 		} else {
-			if (Camera.mainCamera != null)
+			if (Camera.main != null)
 			{
-				Camera.mainCamera.clearFlags	= CameraClearFlags.Skybox;
-				Camera.mainCamera.cullingMask	= -1;
+				Camera.main.clearFlags	= CameraClearFlags.Skybox;
+				Camera.main.cullingMask	= -1;
 			}
 			if (GetGrayscaleCamera() != null)
 				m_GrayscaleCamera.enabled = false;
@@ -749,8 +749,8 @@ public class FXMakerMain : MonoBehaviour
 			if (NgSerialized.IsMeshParticleEmitter(pe as ParticleEmitter) && NgSerialized.GetMesh(pe, false) == null)
 			{
 // 				Debug.Log(pe.name + " - MeshParticleEmitter : missing mesh");
-				if (pe.gameObject.renderer != null)
-					DestroyImmediate(pe.gameObject.renderer);
+				if (pe.gameObject.GetComponent<Renderer>() != null)
+					DestroyImmediate(pe.gameObject.GetComponent<Renderer>());
 				DestroyImmediate(pe);
 			}
 		}

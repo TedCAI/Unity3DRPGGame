@@ -42,20 +42,20 @@ public class FXMakerWireframe : MonoBehaviour
 	// Property -------------------------------------------------------------------------
 	bool IsShuriken()
 	{
-		return m_BaseTrans.particleSystem != null;
+		return m_BaseTrans.GetComponent<ParticleSystem>() != null;
 	}
 
 	bool IsLegacy()
 	{
-		return m_BaseTrans.particleEmitter != null && m_BaseTrans.particleEmitter.enabled;
+		return m_BaseTrans.GetComponent<ParticleEmitter>() != null && m_BaseTrans.GetComponent<ParticleEmitter>().enabled;
 	}
 
 	Component GetParticleComponent()
 	{
 		if (IsShuriken())
-			return m_BaseTrans.particleSystem;
+			return m_BaseTrans.GetComponent<ParticleSystem>();
 		if (IsLegacy())
-			return m_BaseTrans.particleEmitter;
+			return m_BaseTrans.GetComponent<ParticleEmitter>();
 		return null;
 	}
 
@@ -80,9 +80,9 @@ public class FXMakerWireframe : MonoBehaviour
 	public int GetParticleCount()
 	{
 		if (IsShuriken())
-			return m_BaseTrans.particleSystem.particleCount;
+			return m_BaseTrans.GetComponent<ParticleSystem>().particleCount;
 		if (IsLegacy())
-			return m_BaseTrans.particleEmitter.particleCount;
+			return m_BaseTrans.GetComponent<ParticleEmitter>().particleCount;
 		return 0;
 	}
 
@@ -102,8 +102,8 @@ public class FXMakerWireframe : MonoBehaviour
 			if (IsShuriken())
 			{
 				float fScale = 1.0f;
-				ParticleSystem.Particle[]	parts = new ParticleSystem.Particle[m_BaseTrans.particleSystem.particleCount];
-				m_BaseTrans.particleSystem.GetParticles(parts);
+				ParticleSystem.Particle[]	parts = new ParticleSystem.Particle[m_BaseTrans.GetComponent<ParticleSystem>().particleCount];
+				m_BaseTrans.GetComponent<ParticleSystem>().GetParticles(parts);
 
 				NcTransformTool.InitWorldTransform(m_CalcBaseTrans);
 				if (m_bWorldParticle)
@@ -134,7 +134,7 @@ public class FXMakerWireframe : MonoBehaviour
 				}
 			} else {
 				float fScale = 1.0f;
-				Particle[]	parts = m_BaseTrans.particleEmitter.particles;
+				Particle[]	parts = m_BaseTrans.GetComponent<ParticleEmitter>().particles;
 
 				NcTransformTool.InitWorldTransform(m_CalcBaseTrans);
 				if (m_bWorldParticle)
@@ -187,12 +187,12 @@ public class FXMakerWireframe : MonoBehaviour
 	void OnRenderObject()
 	{
 //		if (Camera.mainCamera == null || m_meshRenderer == null)
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		if (m_BaseTrans == null)
 		{
-			// OnDestroy ¿¡¼­ »ý¼ºµÈ wire
+			// OnDestroy ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ wire
 			Destroy(gameObject);
 			return;
 		}
@@ -265,7 +265,7 @@ public class FXMakerWireframe : MonoBehaviour
 		m_lineMaterial.SetPass(0);
 
 		NcTransformTool.InitWorldTransform(m_CalcChildTrans);
-		m_CalcChildTrans.LookAt(Camera.mainCamera.transform, Camera.mainCamera.transform.up);
+		m_CalcChildTrans.LookAt(Camera.main.transform, Camera.main.transform.up);
 		m_CalcChildTrans.position	= pos;
 
 
@@ -312,7 +312,7 @@ public class FXMakerWireframe : MonoBehaviour
 	// Function ----------------------------------------------------------------------
 	public bool SetWireframe(bool bWireframe, bool bTexture, bool bRoot)
 	{
-		if (m_BaseTrans == null || m_BaseTrans.renderer == null)
+		if (m_BaseTrans == null || m_BaseTrans.GetComponent<Renderer>() == null)
 		{
 			m_bWireframe	 = false;
 			return false;

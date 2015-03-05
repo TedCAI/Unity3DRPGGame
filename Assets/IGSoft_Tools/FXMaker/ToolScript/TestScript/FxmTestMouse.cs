@@ -69,7 +69,7 @@ public class FxmTestMouse : MonoBehaviour
 
     void Start()
 	{
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 //         Vector3 angles = Camera.mainCamera.transform.eulerAngles;
@@ -77,8 +77,8 @@ public class FxmTestMouse : MonoBehaviour
 //         m_fYRot = angles.x;
 
         // Make the rigid body not change rotation
-        if (rigidbody)
-            rigidbody.freezeRotation = true;
+        if (GetComponent<Rigidbody>())
+            GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 	bool IsGUIMousePosition()
@@ -103,7 +103,7 @@ public class FxmTestMouse : MonoBehaviour
 
 	public void UpdateCamera(bool bOnlyZoom)
 	{
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		if (m_fWheelSpeed < 0)
@@ -117,9 +117,9 @@ public class FxmTestMouse : MonoBehaviour
 			m_fDistance = Mathf.Clamp(m_fDistance - Input.GetAxis("Mouse ScrollWheel")*m_fWheelSpeed*fDistRate, m_fDistanceMin, m_fDistanceMax);
 
 			// 오소방식이면.. 화면 사이즈를 조정하자
-			if (Camera.mainCamera.orthographic)
+			if (Camera.main.orthographic)
 			{
-				Camera.mainCamera.orthographicSize = m_fDistance*0.60f;
+				Camera.main.orthographicSize = m_fDistance*0.60f;
 				if (m_GrayscaleCamara != null)
 					m_GrayscaleCamara.orthographicSize = m_fDistance*0.60f;
 			}
@@ -142,7 +142,7 @@ public class FxmTestMouse : MonoBehaviour
 			if (m_bRaycastHit)
 			{
 				RaycastHit hit;
-				if (Physics.Linecast (m_TargetTrans.position, Camera.mainCamera.transform.position, out hit)) {
+				if (Physics.Linecast (m_TargetTrans.position, Camera.main.transform.position, out hit)) {
 						m_fDistance -=  hit.distance;
 				}
 			}
@@ -150,13 +150,13 @@ public class FxmTestMouse : MonoBehaviour
 			Vector3 negDistance = new Vector3(0.0f, 0.0f, -m_fDistance);
 			Vector3 position = rotation * negDistance + m_TargetTrans.position;
 	 
-			Camera.mainCamera.transform.rotation = rotation;
-			Camera.mainCamera.transform.position = position;
-			UpdatePosition(Camera.mainCamera.transform);
+			Camera.main.transform.rotation = rotation;
+			Camera.main.transform.position = position;
+			UpdatePosition(Camera.main.transform);
 			if (m_GrayscaleCamara != null)
 			{
-				m_GrayscaleCamara.transform.rotation = Camera.mainCamera.transform.rotation;
-				m_GrayscaleCamara.transform.position = Camera.mainCamera.transform.position;
+				m_GrayscaleCamara.transform.rotation = Camera.main.transform.rotation;
+				m_GrayscaleCamara.transform.position = Camera.main.transform.position;
 			}
 
 			// save

@@ -274,7 +274,7 @@ public class FXMakerGizmo : MonoBehaviour
 		if (enabled == false)
 			return;
 
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		if (m_SelectedTransform == null)
@@ -447,7 +447,7 @@ public class FXMakerGizmo : MonoBehaviour
 		Vector3		vecDirect	= Vector3.zero;
 		Vector3		vecPos		= Vector3.zero;
 
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		// set color
@@ -490,7 +490,7 @@ public class FXMakerGizmo : MonoBehaviour
 		Vector3		vecPos		= Vector3.zero;
 		Color		color		= Color.white;
 
-		if (Camera.mainCamera == null)
+		if (Camera.main == null)
 			return;
 
 		// set color
@@ -508,9 +508,9 @@ public class FXMakerGizmo : MonoBehaviour
 		Vector3		guiPos		= new Vector3(baseRect.x-50, baseRect.y+30) - guiCenPos;
 		Transform	tempTrans	= GetTempTransform();
 
-		tempTrans.position	= Camera.mainCamera.ScreenToWorldPoint(guiCenPos);
+		tempTrans.position	= Camera.main.ScreenToWorldPoint(guiCenPos);
 		vecDirect			= tempTrans.position + GetDirect(tempTrans, drawAxis, true) * fDist/20;
-		vecPos				= Camera.mainCamera.WorldToScreenPoint(vecDirect);
+		vecPos				= Camera.main.WorldToScreenPoint(vecDirect);
 		vecPos.y = Screen.height - vecPos.y;
  		NgGUIDraw.DrawLine(guiPos+guiCenPos, guiPos+vecPos, color, 3, true);
 	}
@@ -744,19 +744,19 @@ public class FXMakerGizmo : MonoBehaviour
 		{
 			NgObject.SetActive(m_GridXYGameObject, (bShow && m_bGridXY));
 			m_GridXYGameObject.transform.localScale	= texSize;
-			m_GridXYGameObject.renderer.sharedMaterial.mainTextureScale	= texUnit;
+			m_GridXYGameObject.GetComponent<Renderer>().sharedMaterial.mainTextureScale	= texUnit;
 		}
 		if (m_GridXZGameObject != null)
 		{
 			NgObject.SetActive(m_GridXZGameObject, (bShow && m_bGridXZ));
 			m_GridXYGameObject.transform.localScale	= texSize;
-			m_GridXYGameObject.renderer.sharedMaterial.mainTextureScale	= texUnit;
+			m_GridXYGameObject.GetComponent<Renderer>().sharedMaterial.mainTextureScale	= texUnit;
 		}
 		if (m_GridYZGameObject != null)
 		{
 			NgObject.SetActive(m_GridYZGameObject, (bShow && m_bGridYZ));
 			m_GridXYGameObject.transform.localScale	= texSize;
-			m_GridXYGameObject.renderer.sharedMaterial.mainTextureScale	= texUnit;
+			m_GridXYGameObject.GetComponent<Renderer>().sharedMaterial.mainTextureScale	= texUnit;
 		}
 	}
 
