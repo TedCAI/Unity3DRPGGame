@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Fighter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ClickToMove.cs">
     <Files>
-      <File FileName="Assets\Fighter.cs" Line="1" Column="1" />
+      <File FileName="Assets\CastThunder.cs" Line="1" Column="1" />
+      <File FileName="Assets\Fighter.cs" Line="179" Column="181" />
       <File FileName="Assets\Mob.cs" Line="1" Column="1" />
       <File FileName="Assets\StrikeFireBall.cs" Line="1" Column="1" />
-      <File FileName="Assets\SpecialAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Strike.cs" Line="1" Column="1" />
       <File FileName="Assets\FireWall.cs" Line="1" Column="1" />
       <File FileName="Assets\Thunder.cs" Line="1" Column="1" />
       <File FileName="Assets\DestroyObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\CastThunder.cs" Line="1" Column="1" />
+      <File FileName="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="36" Column="25" />
+      <File FileName="Assets\ClickToMove.cs" Line="58" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
