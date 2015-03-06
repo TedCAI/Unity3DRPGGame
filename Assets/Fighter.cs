@@ -29,7 +29,7 @@ public class Fighter : MonoBehaviour {
 
 	void Start () {
 		health = maxHealth;
-		impactLength = (animation [attack.name].length * impactTime);
+		impactLength = (GetComponent<Animation>() [attack.name].length * impactTime);
 		InvokeRepeating ("repeat",0,1);
 
 	}
@@ -60,7 +60,7 @@ public class Fighter : MonoBehaviour {
 	public bool attackFunction(int stunSeconds, double scaledDamage, KeyCode key, GameObject particleEffect, int projectile, bool opponentBased){
 		if (opponentBased) {
 			if (Input.GetKey (key) && inRange ()) {
-				animation.Play (attack.name);
+				GetComponent<Animation>().Play (attack.name);
 				ClickToMove.attack = true;
 			
 				if (opponent != null) {
@@ -70,7 +70,7 @@ public class Fighter : MonoBehaviour {
 			}
 		} else {
 			if (Input.GetKey (key)) {
-				animation.Play (attack.name);
+				GetComponent<Animation>().Play (attack.name);
 				ClickToMove.attack = true;
 				casting = false;
 				transform.LookAt (ClickToMove.cursorPosition);
@@ -82,7 +82,7 @@ public class Fighter : MonoBehaviour {
 
 
 
-		if (animation [attack.name].time >= animation [attack.name].length * 0.9) {
+		if (GetComponent<Animation>() [attack.name].time >= GetComponent<Animation>() [attack.name].length * 0.9) {
 			ClickToMove.attack = false;
 			impacted = false; 
 			if(specialAttack){
@@ -97,7 +97,7 @@ public class Fighter : MonoBehaviour {
 	public void resetAttackFunction(){
 		ClickToMove.attack = false;
 		impacted = false;
-		animation.Stop (attack.name);
+		GetComponent<Animation>().Stop (attack.name);
 	}
 
 	public void getHit(int damage){
@@ -118,11 +118,11 @@ public class Fighter : MonoBehaviour {
 	void dieMethod(){
 
 		if (!started && !ended) {
-						animation.Play (die.name);
+						GetComponent<Animation>().Play (die.name);
 						started = true;
 				}
 		
-		if (animation.IsPlaying(die.name) && started) {
+		if (GetComponent<Animation>().IsPlaying(die.name) && started) {
 			//Destroy (gameObject);
 			if(!ClickToMove.die){
 				Debug.Log("Died");
@@ -136,8 +136,8 @@ public class Fighter : MonoBehaviour {
 
 	void impact(int stunSeconds, double scaledDamage, GameObject particleEffect, int projectile, bool opponentBased)
 	{
-		if ((!opponentBased || opponent != null) && animation.IsPlaying (attack.name) && !impacted) {
-			if ((animation [attack.name].time > animation [attack.name].length * impactTime) && (animation [attack.name].time < animation [attack.name].length * 0.9)) {
+		if ((!opponentBased || opponent != null) && GetComponent<Animation>().IsPlaying (attack.name) && !impacted) {
+			if ((GetComponent<Animation>() [attack.name].time > GetComponent<Animation>() [attack.name].length * impactTime) && (GetComponent<Animation>() [attack.name].time < GetComponent<Animation>() [attack.name].length * 0.9)) {
 								countDown=combatEscapeTime;
 								CancelInvoke ("combatEscapeCountDown");
 								InvokeRepeating("combatEscapeCountDown",1,1);
@@ -167,14 +167,16 @@ public class Fighter : MonoBehaviour {
 										//Quaternion.RotateTowards(new Vector3(0f, 0f,0f));
 										Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot1);
 										Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), rot2);
-									}if(projectile == 3){
+									}if(projectile == 3 || projectile == 5){
 										int numOfBalls = 36;
 										float degree = 0f;
 										
 										for(int i = 0; i < numOfBalls; i++){
 											degree += 10f;
-											Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
-													
+											if(projectile == 3)
+												Instantiate(Resources.Load("DOTFireBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
+											else if(projectile == 5)
+												Instantiate(Resources.Load("AcidBall"), new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.Euler(new Vector3(0f, degree,0f)));
 										}
 									}if(projectile == 4){
 										Instantiate(Resources.Load("FireWall"), new Vector3(ClickToMove.cursorPosition.x, 0f, ClickToMove.cursorPosition.z), Quaternion.identity);

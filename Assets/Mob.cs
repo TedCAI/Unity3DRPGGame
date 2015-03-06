@@ -33,8 +33,10 @@ public class Mob : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find ("Player").GetComponent<Transform> ();
 		health = maxHealth;
 		opponent = player.GetComponent<Fighter> ();
+		playerLevel = GameObject.Find ("Player").GetComponent<LevelSystem> ();
 	}
 	
 	// Update is called once per frame
@@ -49,10 +51,10 @@ public class Mob : MonoBehaviour {
 					chase ();
 				} else {
 					//animation.CrossFade (idle.name);
-					animation.Play (attackClip.name);
+					GetComponent<Animation>().Play (attackClip.name);
 					attack ();
 
-					if (animation [attackClip.name].time >= animation [attackClip.name].length * 0.9) {
+					if (GetComponent<Animation>() [attackClip.name].time >= GetComponent<Animation>() [attackClip.name].length * 0.9) {
 						impacted = false;
 					}
 				}
@@ -66,7 +68,7 @@ public class Mob : MonoBehaviour {
 	}
 
 	void attack(){
-		if (animation [attackClip.name].time > animation [attackClip.name].length * impactTime && !impacted && (animation[attackClip.name].time < animation[attackClip.name].length * 0.9)) {
+		if (GetComponent<Animation>() [attackClip.name].time > GetComponent<Animation>() [attackClip.name].length * impactTime && !impacted && (GetComponent<Animation>()[attackClip.name].time < GetComponent<Animation>()[attackClip.name].length * 0.9)) {
 						opponent.getHit(damage);
 						impacted=true;
 				}
@@ -114,11 +116,12 @@ public class Mob : MonoBehaviour {
 	}
 
 	void dieMethod(){
-				animation.Play (die.name);
-
-				if (animation [die.name].time > animation [die.name].length * 0.9) {
+				GetComponent<Animation>().Play (die.name);
+				//Debug.Log ("die");
+				//Debug.Log (this.gameObject);
+				if (GetComponent<Animation>() [die.name].time > GetComponent<Animation>() [die.name].length * 0.75) {
 						playerLevel.exp += 200;
-						Destroy (gameObject);
+						Destroy (this.gameObject);
 				}
 		}
 
@@ -141,7 +144,7 @@ public class Mob : MonoBehaviour {
 	{
 		transform.LookAt (player.position);
 		controller.SimpleMove (transform.forward * speed);
-		animation.CrossFade (run.name);
+		GetComponent<Animation>().CrossFade (run.name);
 	}
 
 	void OnMouseOver(){

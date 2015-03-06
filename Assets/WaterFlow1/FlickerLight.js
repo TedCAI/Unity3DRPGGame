@@ -11,7 +11,7 @@ function Update()
     // get cosine and transform from -1..1 to 0..1 range
     var amplitude : float = Mathf.Cos( phi ) * 0.1 + 0.9;
     // set light color
-    light.intensity = amplitude;
+    GetComponent.<Light>().intensity = amplitude;
 	
 	 if (Time.time > nextFire)
 	{

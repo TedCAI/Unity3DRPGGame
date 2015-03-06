@@ -11,6 +11,7 @@ public class ClickToMove : MonoBehaviour {
 
 	public static bool attack = false;
 	public static bool die = false;
+	public static bool isRunning =false;
 
 	public static Vector3 cursorPosition;
 	// Use this for initialization
@@ -29,7 +30,36 @@ public class ClickToMove : MonoBehaviour {
 						}
 						//if (con == 1) {
 						moveToPosition ();
-						//}
+
+					if(Input.GetKey(KeyCode.W)){
+						//Debug.Log("triggered");
+						if(isRunning){
+							position = transform.position;
+							isRunning = false;
+						}
+						moveForward(KeyCode.W);
+					}else if(Input.GetKey(KeyCode.S)){
+							//Debug.Log("triggered");
+							if(isRunning){
+								position = transform.position;
+								isRunning = false;
+							}
+							moveForward(KeyCode.S);
+						}else if(Input.GetKey(KeyCode.A)){
+							//Debug.Log("triggered");
+							if(isRunning){
+								position = transform.position;
+								isRunning = false;
+							}
+							moveForward(KeyCode.A);
+						}else if(Input.GetKey(KeyCode.D)){
+							//Debug.Log("triggered");
+							if(isRunning){
+								position = transform.position;
+								isRunning = false;
+							}
+							moveForward(KeyCode.D);
+						}
 				}
 
 	}
@@ -69,14 +99,34 @@ public class ClickToMove : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, Time.deltaTime * 10);
 			controller.SimpleMove (transform.forward * speed);
 						//Debug.Log (transform.position);
-			animation.CrossFade(run.name);
+			isRunning = true;
+			GetComponent<Animation>().CrossFade(run.name);
 
 		} else {
 			//Debug.Log("Here");
-			animation.CrossFade(idle.name);		
+			isRunning = false;
+			GetComponent<Animation>().CrossFade(idle.name);		
 		}
 
 	}
 
+	void moveForward(KeyCode key){
+				//Quaternion newRotation = Quaternion.Euler (new Vector3 (0f, 0f, 0f));
+		if (key == KeyCode.W) {
+			transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, 0f));
+			controller.SimpleMove (transform.forward * 10f);
+		}else if (key == KeyCode.S) {
+			transform.rotation = Quaternion.Euler (new Vector3 (0f, 180f, 0f));
+			controller.SimpleMove (transform.forward * 10f);
+		}else if (key == KeyCode.A) {
+			transform.rotation = Quaternion.Euler (new Vector3 (0f, 270f, 0f));
+			controller.SimpleMove (transform.forward * 10f);
+		}else if (key == KeyCode.D) {
+			transform.rotation = Quaternion.Euler (new Vector3 (0f, 90f, 0f));
+			controller.SimpleMove (transform.forward * 10f);
+		}
+		//Debug.Log (transform.position);
+		GetComponent<Animation>().CrossFade(run.name);
+	}
 
 }
