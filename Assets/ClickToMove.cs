@@ -195,6 +195,7 @@ public class ClickToMove : MonoBehaviour {
 			newRotation.y = newRotation.y / (float)numberOfKeys;
 			transform.rotation = Quaternion.Euler (newRotation);
 			controller.SimpleMove (transform.forward * 10f);
+			//controller.Move(transform.forward * 10f);
 			GetComponent<Animation> ().CrossFade (run.name);
 		}
 	}
