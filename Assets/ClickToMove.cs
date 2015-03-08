@@ -20,8 +20,6 @@ public class ClickToMove : MonoBehaviour {
 	public static bool aDown = false;
 	public static bool dDown = false;
 
-	public bool clickButton;
-
 	public static int numberOfKeys = 0;
 	// Use this for initialization
 	void Start () {
@@ -33,16 +31,11 @@ public class ClickToMove : MonoBehaviour {
 		//Debug.Log (die);
 		locateCursor ();
 		controller = GetComponent<CharacterController> ();
-
-		//if (!isGrounded) {
-			if(!controller.isGrounded)
-				controller.SimpleMove(transform.up*-10f);
-			//else
-				//isGrounded = true;
-		//}
-
+		if (!controller.isGrounded) {
+			controller.SimpleMove(transform.up*-10f);
+		}
 		if (!attack && !die) {
-			if (Input.GetMouseButton (0) && !clickButton) {
+			if (Input.GetMouseButton (0)) {
 				locatePosition ();
 				isRunning = true;				//con = 1;
 			}

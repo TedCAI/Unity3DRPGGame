@@ -95,7 +95,6 @@
      <Compile Include="Assets\MagicalFx2\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Mob.cs" />
      <Compile Include="Assets\OnFire.cs" />
-     <Compile Include="Assets\PlayerHP.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\SpamEnemy.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
