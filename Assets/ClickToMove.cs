@@ -30,13 +30,17 @@ public class ClickToMove : MonoBehaviour {
 	void Update () {
 		//Debug.Log (die);
 		locateCursor ();
+		controller = GetComponent<CharacterController> ();
+		if (!controller.isGrounded) {
+			controller.SimpleMove(transform.up*-10f);
+		}
 		if (!attack && !die) {
 			if (Input.GetMouseButton (0)) {
 				locatePosition ();
-								//con = 1;
+				isRunning = true;				//con = 1;
 			}
-						//if (con == 1) {
-			moveToPosition ();
+			if(isRunning)		//if (con == 1) {
+				moveToPosition ();
 
 			if(Input.GetKeyDown(KeyCode.W) && !wDown && numberOfKeys <= 2 && !sDown){
 				wDown = true;
@@ -190,7 +194,7 @@ public class ClickToMove : MonoBehaviour {
 					newRotation.y = -270f;
 			}
 
-			Debug.Log(newRotation);
+			//Debug.Log(newRotation);
 			Debug.Log(numberOfKeys);
 			newRotation.y = newRotation.y / (float)numberOfKeys;
 			transform.rotation = Quaternion.Euler (newRotation);
@@ -198,6 +202,9 @@ public class ClickToMove : MonoBehaviour {
 			//controller.Move(transform.forward * 10f);
 			GetComponent<Animation> ().CrossFade (run.name);
 		}
+
+		if (numberOfKeys == 0 && !isRunning)
+			GetComponent<Animation> ().CrossFade (idle.name);
 	}
 
 }

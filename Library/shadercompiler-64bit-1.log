@@ -1,59 +1,7 @@
 Base path: F:/Program Files (x86)/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-36396
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-47908
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=4 type=0 insize=63517 outsize=5166 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_NORMAL_MAP ok=1
+  api=4 type=0 insize=938 outsize=4711 kw=POINT SHADOWS_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=63517 outsize=4175 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_NORMAL_MAP ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=39955 outsize=4402 kw=POINT _TERRAIN_NORMAL_MAP ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=39955 outsize=4516 kw=POINT _TERRAIN_NORMAL_MAP ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=751 outsize=3517 kw=SHADOWS_DEPTH ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=751 outsize=364 kw=SHADOWS_DEPTH ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=3963 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=977 outsize=10431 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=934 outsize=4020 kw=DIRECTIONAL SHADOWS_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=934 outsize=5328 kw=DIRECTIONAL SHADOWS_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=4622 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=977 outsize=11219 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=934 outsize=4020 kw=DIRECTIONAL SHADOWS_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=934 outsize=6068 kw=DIRECTIONAL SHADOWS_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=934 outsize=4711 kw=POINT SHADOWS_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=934 outsize=6531 kw=POINT SHADOWS_OFF _NORMALMAP ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=39955 outsize=3240 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=39955 outsize=3557 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=141004 outsize=5450 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=141004 outsize=11357 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=141004 outsize=3996 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=93240 outsize=3240 kw=POINT _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=93240 outsize=7319 kw=POINT _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=14871 outsize=3492 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=14871 outsize=10106 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=8465 outsize=2737 kw=POINT _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=8465 outsize=6100 kw=POINT _TERRAIN_OVERRIDE_SMOOTHNESS ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=6035 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON _NORMALMAP ok=1
+  api=4 type=1 insize=938 outsize=5889 kw=POINT SHADOWS_OFF ok=1
