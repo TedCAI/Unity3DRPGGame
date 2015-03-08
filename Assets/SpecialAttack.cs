@@ -22,6 +22,8 @@ public class SpecialAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		/*
 		if (Input.GetKeyDown (key) && !player.specialAttack) {
 			player.resetAttackFunction();
 			player.specialAttack=true;
@@ -36,6 +38,28 @@ public class SpecialAttack : MonoBehaviour {
 			if(player.attackFunction (stunTime, damagePercentage, key, particleEffect, projectile, opponentBased)){
 
 			}else{
+				inAction = false;
+			}
+		}*/
+
+		attack ();
+	}
+
+	public void attack(){
+		if (Input.GetKeyDown (key) && !player.specialAttack) {
+			player.resetAttackFunction ();
+			player.specialAttack = true;
+			inAction = true;
+		}
+		
+				//if(dotSkill != null){
+				//	dotSkill.GetComponent<DOTSkill>().damage = (int)(damagePercentage*100);
+				//}
+		
+		if (inAction) {
+			if (player.attackFunction (stunTime, damagePercentage, key, particleEffect, projectile, opponentBased)) {
+				
+			} else {
 				inAction = false;
 			}
 		}
