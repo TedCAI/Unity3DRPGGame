@@ -22,7 +22,8 @@ public class SpamEnemy : MonoBehaviour {
 		playerLocation = GameObject.Find ("Player").GetComponent<Transform> ().position;
 		Vector3 randomCoordinate = new Vector3();
 		randomCoordinate.x = Random.Range (-10f, 10f) + playerLocation.x;
-		randomCoordinate.z += Random.Range (-10f, 10f) + playerLocation.z;
+		randomCoordinate.z = Random.Range (-10f, 10f) + playerLocation.z;
+		randomCoordinate.y = 10f;
 		Instantiate (Resources.Load ("Enemy1"), randomCoordinate, Quaternion.identity);
 	}
 }
