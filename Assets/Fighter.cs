@@ -134,7 +134,7 @@ public class Fighter : MonoBehaviour {
 		}
 	}
 
-	void impact(int stunSeconds, double scaledDamage, GameObject particleEffect, int projectile, bool opponentBased)
+	public void impact(int stunSeconds, double scaledDamage, GameObject particleEffect, int projectile, bool opponentBased)
 	{
 		if ((!opponentBased || opponent != null) && GetComponent<Animation>().IsPlaying (attack.name) && !impacted) {
 			if ((GetComponent<Animation>() [attack.name].time > GetComponent<Animation>() [attack.name].length * impactTime) && (GetComponent<Animation>() [attack.name].time < GetComponent<Animation>() [attack.name].length * 0.9)) {
