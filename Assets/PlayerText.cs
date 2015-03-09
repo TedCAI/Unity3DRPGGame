@@ -22,11 +22,15 @@ public class PlayerText : MonoBehaviour {
 	void Update () {
 		//transformR = (RectTransform)GetComponent<Transform> ();
 		Vector2 position = transformR.anchoredPosition;
-		Vector3 scaleRect = new Vector3 (1f,1f,1f);
-		scaleRect.x =  Screen.width / (float)originalWidth;
-		scaleRect.y = Screen.height / (float)originalHeight;
-		gameObject.GetComponent<Text>().fontSize = (int)(14 * scaleRect.y);
-		Debug.Log (scaleRect);
+		//Vector3 scaleRect = new Vector3 (1f,1f,1f);
+		//scaleRect.x =  Screen.width / (float)originalWidth;
+		float sizeScale = Screen.height / (float)originalHeight;
+		int sizedFontSize = (int)(14 * sizeScale);
+		if (sizedFontSize > 25)
+			gameObject.GetComponent<Text> ().fontSize = 25;
+		else
+			gameObject.GetComponent<Text> ().fontSize = sizedFontSize;
+		//Debug.Log (scaleRect);
 		//transformR.localScale = scaleRect;
 		//transformR.rect.width = Screen.width * scale;
 		//transform.position.x = (Screen.width - transform.rect.width) / 2;
