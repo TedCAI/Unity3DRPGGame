@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SkillBar : MonoBehaviour {
 	//public RectTransform transformR;
 	public float scale = 0.0889f;
 	// Use this for initialization
+	//public image
 	public Vector3 originalPosition;
 	public int originalWidth;
 	public int originalHeight;
@@ -31,8 +33,4 @@ public class SkillBar : MonoBehaviour {
 		GetComponent<RectTransform> ().position = newPosition;
 	}
 
-	void OnMouseClick(){
-		Debug.Log ("true");
-		Debug.Log(gameObject.GetComponentInChildren<Transform>().position);
-	}
 }
