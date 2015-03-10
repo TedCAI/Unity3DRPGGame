@@ -99,6 +99,7 @@
      <Compile Include="Assets\PlayerHP.cs" />
      <Compile Include="Assets\PlayerText.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SkillBar.cs" />
      <Compile Include="Assets\SpamEnemy.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
      <Compile Include="Assets\Strike.cs" />
