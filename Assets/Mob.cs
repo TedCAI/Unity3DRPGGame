@@ -160,4 +160,18 @@ public class Mob : MonoBehaviour {
 		stunTime = seconds;
 		InvokeRepeating ("stunCountDown", 0f, 1f);
 	}
+
+	void OnGUI(){
+		Vector3 screenCoordinate = Camera.main.WorldToScreenPoint (transform.position);
+		GUIStyle myStyle = new GUIStyle ();
+		//Debug.Log (screenCoordinate);
+		myStyle.fontSize = 20;
+		myStyle.normal.textColor = Color.red;
+		myStyle.alignment = TextAnchor.MiddleCenter;
+		//float scale = GameObject.Find ("Text").GetComponent<PlayerText> ().scaleX;
+		GUI.Label (new Rect (screenCoordinate.x - 40f, Screen.height - screenCoordinate.y, 80f, 25f), "Enemy", myStyle);
+		//GUI.Box (new Rect (screenCoordinate.x - 40f , Screen.height - screenCoordinate.y , 80f, 30f), "Enemy");
+		//GUI.Label(
+		//GUI.TextArea(
+	}
 }

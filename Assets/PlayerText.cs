@@ -9,6 +9,8 @@ public class PlayerText : MonoBehaviour {
 	// Use this for initialization
 	public int originalWidth;
 	public int originalHeight;
+	public float scaleY;
+	public float scaleX;
 	void Start () {
 		//Debug.Log (GetComponent<RectTransform> ());
 		//transformR = (RectTransform)GetComponent<Transform> ();
@@ -23,9 +25,9 @@ public class PlayerText : MonoBehaviour {
 		//transformR = (RectTransform)GetComponent<Transform> ();
 		Vector2 position = transformR.anchoredPosition;
 		//Vector3 scaleRect = new Vector3 (1f,1f,1f);
-		//scaleRect.x =  Screen.width / (float)originalWidth;
-		float sizeScale = Screen.height / (float)originalHeight;
-		int sizedFontSize = (int)(14 * sizeScale);
+		scaleX =  Screen.width / (float)originalWidth;
+		scaleY = Screen.height / (float)originalHeight;
+		int sizedFontSize = (int)(14 * scaleY);
 		if (sizedFontSize > 25)
 			gameObject.GetComponent<Text> ().fontSize = 25;
 		else
