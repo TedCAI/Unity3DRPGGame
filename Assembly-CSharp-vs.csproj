@@ -50,6 +50,7 @@
      <Compile Include="Assets\CastThunder.cs" />
      <Compile Include="Assets\ClickToMove.cs" />
      <Compile Include="Assets\ClickToMoveCamera.cs" />
+     <Compile Include="Assets\Coordinate.cs" />
      <Compile Include="Assets\DOTSkill.cs" />
      <Compile Include="Assets\DestroyObject.cs" />
      <Compile Include="Assets\EnemyHealth.cs" />
@@ -96,7 +97,9 @@
      <Compile Include="Assets\Mob.cs" />
      <Compile Include="Assets\OnFire.cs" />
      <Compile Include="Assets\PlayerHP.cs" />
+     <Compile Include="Assets\PlayerText.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\SkillBar.cs" />
      <Compile Include="Assets\SpamEnemy.cs" />
      <Compile Include="Assets\SpecialAttack.cs" />
      <Compile Include="Assets\Strike.cs" />
