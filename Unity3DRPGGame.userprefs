@@ -1,18 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BlinkSkill.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SpecialAttack.cs">
     <Files>
-      <File FileName="Assets\BlinkSkill.cs" Line="34" Column="5" />
-      <File FileName="Assets\TextLocation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Coordinate.cs" Line="1" Column="1" />
-      <File FileName="Assets\SpecialAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\SpamEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\BlinkSkill.cs" Line="41" Column="3" />
+      <File FileName="Assets\SpamEnemy.cs" Line="32" Column="24" />
       <File FileName="Assets\StrikeFireBall.cs" Line="1" Column="1" />
       <File FileName="Assets\EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\ClickToMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayerHP.cs" Line="1" Column="1" />
+      <File FileName="Assets\ClickToMove.cs" Line="155" Column="23" />
       <File FileName="Assets\Mob.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayerText.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerText.cs" Line="30" Column="40" />
+      <File FileName="Assets\Fighter.cs" Line="39" Column="19" />
+      <File FileName="Assets\SpecialAttack.cs" Line="36" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
