@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpamEnemy : MonoBehaviour {
 
 	public Vector3 playerLocation;
+	private GUIText[] btnTexts;
+	public Font font;
+	public int i = 0;
 	// Use this for initialization
 	void Start () {
+		btnTexts = new GUIText[10000];
 		startSpamming ();
 	}
 	
@@ -20,10 +25,21 @@ public class SpamEnemy : MonoBehaviour {
 
 	void spamNewEnemy(){
 		playerLocation = GameObject.Find ("Player").GetComponent<Transform> ().position;
-		Vector3 randomCoordinate = new Vector3();
-		randomCoordinate.x = Random.Range (-10f, 10f) + playerLocation.x;
-		randomCoordinate.z = Random.Range (-10f, 10f) + playerLocation.z;
-		randomCoordinate.y = 10f;
-		Instantiate (Resources.Load ("Enemy1"), randomCoordinate, Quaternion.identity);
+		Vector3 randomCoordinate = playerLocation;
+		randomCoordinate.x += Random.Range (-10f, 10f) ;
+		randomCoordinate.z += Random.Range (-10f, 10f) ;
+		//randomCoordinate.y = playerLocation.y;
+		randomCoordinate.y = Terrain.activeTerrain.SampleHeight (randomCoordinate) + 1f;
+		GameObject newEnemy = (GameObject)Instantiate (Resources.Load ("Enemy1"), randomCoordinate, Quaternion.identity);
+	/*
+
+*/
+		i++;
+
 	}
+	/*
+	void OnGUI(){
+		GUI.Box (new Rect (0f, 0f, 200, 30), "Test");
+	}
+	*/
 }

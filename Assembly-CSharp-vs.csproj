@@ -104,6 +104,7 @@
      <Compile Include="Assets\SpecialAttack.cs" />
      <Compile Include="Assets\Strike.cs" />
      <Compile Include="Assets\StrikeFireBall.cs" />
+     <Compile Include="Assets\TextLocation.cs" />
      <Compile Include="Assets\Thunder.cs" />
      <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Alpha Blended.shader" />
      <None Include="Assets\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Cutout.shader" />
