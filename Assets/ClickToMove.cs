@@ -158,7 +158,7 @@ public class ClickToMove : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, Time.deltaTime * 10);
 			//controller.SimpleMove (transform.forward * speed);
 						//Debug.Log (transform.position);
-			isRunning = true;
+			//isRunning = true;
 			//GetComponent<Animation>().CrossFade(run.name);
 
 		} else {
@@ -200,7 +200,7 @@ public class ClickToMove : MonoBehaviour {
 				if(sDown)
 					newRotation.y = -270f;
 			}
-
+			isRunning = true;
 			//Debug.Log(newRotation);
 			Debug.Log(numberOfKeys);
 			newRotation.y = newRotation.y / (float)numberOfKeys;
