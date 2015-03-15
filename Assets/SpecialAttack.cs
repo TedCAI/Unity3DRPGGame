@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpecialAttack : MonoBehaviour {
 	public double damagePercentage;
@@ -14,12 +15,13 @@ public class SpecialAttack : MonoBehaviour {
 	private bool inCD;
 
 	public bool opponentBased;
+	public GameObject cdIcon;
 
 	//public DOTSkill dotSkill;
 
 	// Use this for initialization
 	void Start () {
-		
+		cdIcon.GetComponent<CDIcon> ().cdTime = coldDownTime;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +36,7 @@ public class SpecialAttack : MonoBehaviour {
 			player.specialAttack = true;
 			inAction = true;
 			inCD = true;
+			cdIcon.GetComponent<Image>().fillAmount = 1.0f;
 			IEnumerator cdTimer = SkillInCD(coldDownTime);
 			StartCoroutine (cdTimer);
 		}
@@ -56,6 +59,6 @@ public class SpecialAttack : MonoBehaviour {
 	IEnumerator SkillInCD(float cd){
 		yield return new WaitForSeconds (cd);
 		inCD = false;
-
+		inAction = false;
 	}
 }
