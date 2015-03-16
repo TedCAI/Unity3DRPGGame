@@ -7,9 +7,11 @@ public class SpamEnemy : MonoBehaviour {
 	public Vector3 playerLocation;
 	private GUIText[] btnTexts;
 	public Font font;
-	public int i = 0;
+	public bool isOn;
+	//public int i = 0;
 	// Use this for initialization
 	void Start () {
+		isOn = true;
 		btnTexts = new GUIText[10000];
 		startSpamming ();
 	}
@@ -24,22 +26,18 @@ public class SpamEnemy : MonoBehaviour {
 	}
 
 	void spamNewEnemy(){
-		playerLocation = GameObject.Find ("Player").GetComponent<Transform> ().position;
-		Vector3 randomCoordinate = playerLocation;
-		randomCoordinate.x += Random.Range (-10f, 10f) ;
-		randomCoordinate.z += Random.Range (-10f, 10f) ;
-		//randomCoordinate.y = playerLocation.y;
-		randomCoordinate.y = Terrain.activeTerrain.SampleHeight (randomCoordinate) + 1f;
-		GameObject newEnemy = (GameObject)Instantiate (Resources.Load ("Enemy1"), randomCoordinate, Quaternion.identity);
-	/*
-
-*/
-		i++;
-
+		if(isOn){
+			playerLocation = GameObject.Find ("Player").GetComponent<Transform> ().position;
+			Vector3 randomCoordinate = playerLocation;
+			randomCoordinate.x += Random.Range (-10f, 10f) ;
+			randomCoordinate.z += Random.Range (-10f, 10f) ;
+			//randomCoordinate.y = playerLocation.y;
+			randomCoordinate.y = Terrain.activeTerrain.SampleHeight (randomCoordinate) + 1f;
+			GameObject newEnemy = (GameObject)Instantiate (Resources.Load ("Enemy1"), randomCoordinate, Quaternion.identity);
+		}
 	}
-	/*
-	void OnGUI(){
-		GUI.Box (new Rect (0f, 0f, 200, 30), "Test");
+
+	public void active(){
+		isOn = !isOn;
 	}
-	*/
 }
