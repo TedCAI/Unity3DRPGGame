@@ -30,6 +30,7 @@ public class Mob : MonoBehaviour {
 	public int effectTime;
 
 	public bool onFire;
+	public bool inFireWall;
 
 	// Use this for initialization
 	void Start () {
@@ -92,7 +93,8 @@ public class Mob : MonoBehaviour {
 	public void getHitDOT(int damage, int effectTime){
 		dotDamage = damage;
 		this.effectTime = effectTime;
-		debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (true);
+		//debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (true);
+		debuffEffect.gameObject.SetActive(true);
 		CancelInvoke ("dOTCountDown");
 		InvokeRepeating ("dOTCountDown", 1f, 1f);
 		onFire = true;
@@ -106,7 +108,8 @@ public class Mob : MonoBehaviour {
 		if (effectTime <= 0) {
 			CancelInvoke ("dOTCountDown");
 			onFire=false;
-			debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (false);
+			debuffEffect.gameObject.SetActive (false);
+			//debuffEffect.GetComponent<OnFire> ().gameObject.SetActive (false);
 		}
 		//InvokeRepeating ("dOTCountDown", 0f, 1f);
 

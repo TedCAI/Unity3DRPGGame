@@ -23,19 +23,20 @@ public class FireWall : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		//Debug.Log ("start");
 
-		if (other.tag == "Enemy" && !isInside) {
+		if (other.tag == "Enemy" && !other.GetComponent<Mob>().inFireWall) {
 			other.GetComponent<Mob>().getHitDOT (damage, effectTime);
 			//other.GetComponent<Mob>().GetComponent<OnFire>().gameObject.SetActive(true);
 			//Physics.IgnoreCollision (selfCollider, other, false);
 			//mob = other;
-			isInside=true;
+			//isInside=true;
+			other.GetComponent<Mob>().inFireWall = true;
 		}
 	}
 
 	void OnTriggerStay(Collider other){
 		//Debug.Log ("stay");
 
-		if (other.tag == "Enemy" && isInside) {
+		if (other.tag == "Enemy" && other.GetComponent<Mob>().inFireWall) {
 			Debug.Log ("inside");
 			//other.GetComponent<Mob>().getHitDOT (damage, effectTime);
 			other.GetComponent<Mob> ().effectTime = effectTime;
@@ -46,7 +47,8 @@ public class FireWall : MonoBehaviour {
 	void OnTriggerExit(Collider other){
 		//Debug.Log (other);
 		if (other.tag == "Enemy") {
-			isInside=false;
+			//isInside=false;
+			other.GetComponent<Mob>().inFireWall = false;
 		}
 	}
 }
