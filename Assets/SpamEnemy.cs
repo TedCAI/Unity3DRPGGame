@@ -26,7 +26,7 @@ public class SpamEnemy : MonoBehaviour {
 	}
 
 	void spamNewEnemy(){
-		if(isOn){
+		if(isOn && !GameObject.Find ("Player").GetComponent<Fighter>().isDead()){
 			playerLocation = GameObject.Find ("Player").GetComponent<Transform> ().position;
 			Vector3 randomCoordinate = playerLocation;
 			randomCoordinate.x += Random.Range (-10f, 10f) ;

@@ -22,7 +22,7 @@ public class LevelSystem : MonoBehaviour {
 	}
 
 	void LevelUp(){
-		if (exp >= (100 * level)) {
+		if (exp >= (100 * level) && !player.isDead()) {
 			exp -= (100 * level);
 			level += 1;
 			//GameObject.Find("Records").GetComponent<Text>().text += "\nLevel up!";

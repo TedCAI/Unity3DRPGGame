@@ -43,28 +43,32 @@ public class Mob : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log (health);
-		if (!isDead ()) {
-			//if(onFire){
-				//Instantiate(Resources.Load("OnFireDebuff"), new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
-			//}
-			if (stunTime <= 0) {
-				if (!inRange ()) {
-					chase ();
-				} else {
-					//animation.CrossFade (idle.name);
-					GetComponent<Animation>().Play (attackClip.name);
-					attack ();
+		if(!player.GetComponent<Fighter>().isDead()){
+			if (!isDead ()) {
+				//if(onFire){
+					//Instantiate(Resources.Load("OnFireDebuff"), new Vector3(transform.position.x, transform.position.y + 2.5f, transform.position.z), Quaternion.identity);
+				//}
+				if (stunTime <= 0) {
+					if (!inRange ()) {
+						chase ();
+					} else {
+						//animation.CrossFade (idle.name);
+						GetComponent<Animation>().Play (attackClip.name);
+						attack ();
 
-					if (GetComponent<Animation>() [attackClip.name].time >= GetComponent<Animation>() [attackClip.name].length * 0.9) {
-						impacted = false;
+						if (GetComponent<Animation>() [attackClip.name].time >= GetComponent<Animation>() [attackClip.name].length * 0.9) {
+							impacted = false;
+						}
 					}
-				}
-			} else{
+				} else{
 
+				}
+			}else {
+				//animation.Play (die.name);
+				dieMethod();
 			}
-		}else {
-			//animation.Play (die.name);
-			dieMethod();
+		}else{
+			GetComponent<Animation>().Play (idle.name);
 		}
 	}
 
