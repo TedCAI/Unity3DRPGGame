@@ -107,7 +107,7 @@ public class Fighter : MonoBehaviour {
 		}
 	}
 
-	bool isDead(){
+	public bool isDead(){
 		if (health <= 0) {
 			return true;
 		} else {

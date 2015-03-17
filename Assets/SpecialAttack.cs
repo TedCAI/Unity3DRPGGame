@@ -31,7 +31,7 @@ public class SpecialAttack : MonoBehaviour {
 	}
 
 	public void attack(){
-		if (Input.GetKeyDown (key) && !player.specialAttack && !inCD) {
+		if (Input.GetKeyDown (key) && !player.specialAttack && !inCD && !player.isDead()) {
 			player.resetAttackFunction ();
 			player.specialAttack = true;
 			inAction = true;

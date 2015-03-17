@@ -8,6 +8,7 @@ public class CastThunder : MonoBehaviour {
 	public float angle;
 	public float time;
 	public static float damage;
+	public bool isOn;
 
 	void Start () {
 		time = Time.time;
@@ -30,7 +31,8 @@ public class CastThunder : MonoBehaviour {
 		//Instantiate (Resources.Load ("Thunder"), coordinate, Quaternion.identity);
 		//multipleCast ();
 		//damage = (Time.time - time) * 250f;
-		InvokeRepeating ("multipleCast", 1f, 0.3f);
+		if(isOn)
+			InvokeRepeating ("multipleCast", 1f, 0.3f);
 	}
 
 	public float thunderDamage(){
@@ -90,5 +92,9 @@ public class CastThunder : MonoBehaviour {
 
 	void cast(Vector3 vector){
 		Instantiate (Resources.Load ("Thunder"), vector, Quaternion.identity);
+	}
+
+	public void active(){
+		isOn = !isOn;
 	}
 }
