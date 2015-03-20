@@ -5,6 +5,9 @@ public class BlinkSkill : MonoBehaviour {
 
 	public GameObject player;
 	public KeyCode key;
+	public bool isRunning;
+	//public bool stopCasting;
+	private IEnumerator coroutine;
 
 	public float particalSize = 0.25f;
 	// Use this for initialization
@@ -14,8 +17,20 @@ public class BlinkSkill : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		isRunning = ClickToMove.isRunning;
 		if (Input.GetKeyDown (key))
 			blink ();
+		if(isRunning){
+	//		stopCasting = true;
+			StopCoroutine(coroutine);
+			CancelInvoke ("scaleSize");
+			particalSize = 0.25f;
+			GameObject.Find ("BlinkEffect2").GetComponent<ParticleRenderer> ().maxParticleSize = particalSize;
+			GameObject.Find ("BlinkEffect").GetComponent<MeshRenderer> ().enabled = false;
+			GameObject.Find ("BlinkEffect2").GetComponent<ParticleRenderer> ().enabled = false;
+		}else{
+			//stopCasting = false;
+		}
 	}
 
 	void blink(){
@@ -35,7 +50,7 @@ public class BlinkSkill : MonoBehaviour {
 
 		newLocation.y = Terrain.activeTerrain.SampleHeight (newLocation) + 0.1f;
 		//activateEffect ();
-		IEnumerator coroutine = Activation (1.5f, newLocation);
+		coroutine = Activation (1.5f, newLocation);
 		InvokeRepeating ("scaleSize", 0f, 0.1f);
 		GameObject.Find ("BlinkEffect2").GetComponent<ParticleRenderer> ().enabled = true;
 		StartCoroutine (coroutine);
@@ -49,9 +64,12 @@ public class BlinkSkill : MonoBehaviour {
 		GameObject.Find ("BlinkEffect").GetComponent<MeshRenderer> ().enabled = true;
 		//InvokeRepeating ("scaleSize", 1f, 0.1f);
 		yield return new WaitForSeconds (waitTime);
-		GetComponent<Transform> ().position = newLocation;
-		GetComponent<CharacterController> ().SimpleMove (transform.up * 10f * Time.deltaTime);
-		CancelInvoke ("scaleSize");
+		//if(!stopCasting){
+			GetComponent<Transform> ().position = newLocation;
+			GetComponent<CharacterController> ().SimpleMove (transform.up * 10f * Time.deltaTime);
+			CancelInvoke ("scaleSize");
+		//}
+	//	stopCasting = false;
 		particalSize = 0.25f;
 		GameObject.Find ("BlinkEffect2").GetComponent<ParticleRenderer> ().maxParticleSize = particalSize;
 		GameObject.Find ("BlinkEffect").GetComponent<MeshRenderer> ().enabled = false;
